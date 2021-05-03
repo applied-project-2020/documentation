@@ -40,7 +40,7 @@ GitHub was the obvious version control of choice. The development of the project
 \begin{itemize}
     \item \textbf{Web Application}: This repository was the main repository we worked on for the duration of semester one. With over three hundred commits, it's fair to say that we extensively used GitHub to manage our collaborative development, while simultaneously refining our skills with Version Control software, which will definitely aid us in future team based developer roles. This repository containing our MERN stack application named \textit{\textbf{zoosh}} was broken into two main folders: \textit{Client} and \textit{Back-End}. The \textit{Client} folder holds the front end React application, which is served to the user through their browser, and is the application that they interact with. The \textit{Back-End} folder holds the web server, that is run with Node.js which is an asynchronous, event driven Javascript runtime, used to build scalable network applications that can handle many concurrent connections. The server is used to make requests to the database, which is cloud-hosted at \href{https://cloud.mongodb.com/v2/5e930ffe4cdf590dd97ad867#clusters}{\textcolor{blue}{cloud.mongodb.com}}. The \textit{Back-End} folder also holds all of the necessary database models, routes, etc that are used for the storing of data.
     \item \textbf{Documentation}: This repository is used to store the contents of our dissertation. Managing the development of our dissertation was something we discussed for a lengthy period of time. As Overleaf only allows up two collaborators to work on the same LaTex document simultaneously for free, but passed that it requires a monthly subscription to their premium service. Instead of this, we decided to manage the documentation with GitHub, and as such, we created the \textit{Documentation} repository. This is also the ideal way to track the amount that we are each contributing to the documentation.
-    \item \textbf{Mobile Application}: This repository is used to hold the mobile application version of our \textit{\textbf{zoosh}} app. Although it hasn't been kept as up-to-date as our web application, it was still an interesting application to develop. The mobile version was created using React Native, which isn't that different structurally from ReactJS, only requiring a couple of tweaks to our code.
+    \item \textbf{Mobile Application}: This repository is used to hold the mobile application version of our \textit{\textbf{zoosh}} app. Although it hasn't been kept as up-to-date as our web application, it was still an interesting application to develop. The mobile version was created using React Native, which isn't that different structurally from ReactJS, only requiring a couple of tweaks to our code. Developing the mobile application was purely for concept and researching the potential of porting the website to mobile, the database can be easily shared between the two as MongoDB allows you to sync the database from MongoDB Atlas to MongoDB Realm. This allows for a fast deployment of a mobile application as the only features that would need to be worked on would be the user interface design and some standard mobile application libraries such as notifications and touch gestures.
 \end{itemize}
 
 
@@ -148,14 +148,44 @@ Forms within our application have been created in a simple and easy to use manne
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.55]{img/login.PNG}
+  \includegraphics[scale=0.45]{img/login.PNG}
   \label{fig:Login Screen}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.55]{img/join.PNG}
+  \includegraphics[scale=0.45]{img/join.PNG}
   \label{fig:Join Screen}
+\end{figure}
+
+\textbf{Edit Profile Form}
+\newline
+When a user has navigated to their account they will be able to edit their profile, the editing options have been limited to Name, Bio, Profile Picture and Password. This form is simple and clean with no confusing aspects within the user interface.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.45]{img/edit.PNG}
+  \label{fig:Edit Profile Screen.}
+\end{figure}
+
+\textbf{Create a Community}
+\newline
+If a user wishes to create a community they must navigate to the 'Explore' page for communities and press 'Create Community'. This action will then lead to a modal pop up which will be a form that the user must fill out to create the community. The form is simple and consists of a community Name, Description, Profile Picture.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.35]{img/createcommunity.PNG}
+  \label{fig:Create Community Modal Form.}
+\end{figure}
+
+\textbf{Create a Post}
+\newline
+If a user wishes to create a post they can click the button 'Write a Post' on the feed pages and another modal pop up form will appear prompting the user to fill out the required sections for a post. A post must consist of a heading so that users will get a brief insight to what the post is about on the feed pages. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.35]{img/createpost.PNG}
+  \label{fig:Create Post Modal.}
 \end{figure}
 
 \newpage
@@ -173,14 +203,6 @@ The feeds are divided into two sections, the default section is to display the p
   \centering
   \includegraphics[scale=0.35]{img/top.PNG}
   \label{fig:Top Posts Feed.}
-\end{figure}
-
-When a user has navigated to their account they will be able to edit their profile, the editing options have been limited to Name, Bio, Profile Picture and Password. This form is simple and clean with no confusing aspects within the user interface.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.45]{img/edit.PNG}
-  \label{fig:Edit Profile Screen.}
 \end{figure}
 
 \newpage
@@ -220,7 +242,9 @@ Early on when designing our website we wanted to incorporate likes and comments.
   \includegraphics[scale=1]{img/Commets_likes.PNG}
   \label{fig:Comments And likes}
 \end{figure}
-Instead of refreshing the page after every like......
+We can then easily load these comments in order of creation on each discussion page. Since we have the user id's stored in the comment we could then create a link to that persons profile, linking each comment to a user. 
+
+When a user likes a discussion it will update the likes in the discussion and then display the current amount of likes. When a user first loads on to a discussion it checks to see if you have already liked it or not. If you have liked it the clap symbol will change to a dark color indicating it's being liked. If a user clicks it again it will unlike the post and will minus one from the current likes.
 
 \subsection{Notifications}
 Notifications was one of the last components to be implemented. Using a social media website notifications are an essential as you will know when somebody has liked your post or made a comment. This was a feature we wanted to incorporate from the beginning. 
@@ -232,9 +256,14 @@ For this feature to work we needed to have the foundation of users being able to
 \end{figure}
 It was important to have the function of clearing the notifications for efficiency as if the notifications built up it would reduce performance. These notifications are also given a timestamp of when they were created, this is done so we can order them from newest to oldest. The notifications feature underwent extensive testing to ensure it would be efficient as possible. Originally we had the notifications be an array under each user. As with each new notification the user collection would grow to a point where it slowed down load times. This is when we decided to redesign the structure and create a new collection for notifications, in doing so only a handful of records are being loaded in at a time increasing performance.
 
-\subsection{Retrieving data}
+\subsection{Reading List}
+This was a feature we thought early on would be a feature to complement the website. When a user goes to a discussion they can click a button to add to their reading list. In doing so they have the opportunity to view this post at a later time. When the user clicks on one of the posts in their reading list they will be brought to the post.
+To remove the a post from the discussion list they can go back to the post and click on the button again to remove it.
+
+\subsection{Retrieving Data}
 
 Retrieving data is an important component of any data heavy website. And as social medias are notoriously data-driven, filled with interactions between users, photo sharing, commenting, and liking, the performance and layout of the back-end became an extremely important aspect of the application. The layout of the backend was seperated very soon after development began, as we noted that the server.js file became increasingly large and complex. We separated the server components into two subfolders: routes, and models. The routes folder contains all of the routes for making requests to the server. For example, in discussions.js, the \textit{get-discussions} [\ref{fig:Get Discussions Route}] route takes in the parameters \textit{fields}, and \textit{limit}. The \textit{fields} variable is used for selecting only the required fields from each document in the database. This greatly increased efficiency when making requests, as the requests weren't returning everything inside the required document. The \textit{limit} variable is used to return only a certain number of documents from the database. There are five route files in the routes folder:
+
 \begin{itemize}
     \item \textbf{Discussions.js}: Contains all of the routes for the creation, reading, updating or deleting of \textbf{discussion} data.
     \item \textbf{Forums.js}: Contains all of the routes for the creation, reading, updating or deleting of \textbf{forums} data.
