@@ -45,13 +45,11 @@ All of the development processes will be discussed throughout the document as fo
 
 \item Methodology - This chapter will discuss the steps we took to develop the project and the testing which we carried out along the way.
 
-\item Experiments - Within this chapter we discuss the issues we faced and how we carried out experiments to overcome and solve the bugs.
-
 \item Technology Review - This is where we run down through the development stack that we chose and why we chose it. 
 
 \item System Design - This chapter discusses the design decisions that we chose and the implementation of all our components.
 
-\item System Evaluation - 
+\item System Evaluation - Within this chapter we discuss the issues we faced and how we carried out experiments to overcome and solve the bugs.
 
 \item Conclusion - This is where we discuss the final stages of development and what we learned while working as a team on a project.
 \end{itemize}
@@ -102,16 +100,15 @@ Stress testing was vital in the development of our application to ensure our app
 
 \end{itemize}
 
+
 \chapter{Technology Review}
 
-The development stack that we chose for this project was the M.E.R.N stack. This development stack consists of MongoDB, Express.js, React,js and Node.js. We chose this stack as it was best way for us to spread the work load throughout the group as it touches all areas of website development such as front-end, back-end and databases. The M.E.R.N stack is a highly used development stack within industry and across many well respected applications we use today. React was the best choice JavaScript library for us to use as it is highly documented online and is backed by the world leading social media company Facebook. We were able to use many resources throughout the development cycle such as \href{https://reactjs.org/}{\textcolor{blue}{Reactjs Documentation}} and \href{https://stackoverflow.com/}{\textcolor{blue}{StackOverflow}}.
-
+The development stack that we chose for this project was the M.E.R.N stack. This development stack consists of MongoDB, Express.js, React,js and Node.js. We chose this stack as it was best way for us to spread the work load throughout the group as it touches all areas of website development such as front-end, back-end and databases. The M.E.R.N stack is a highly used development stack within industry and across many well respected applications we use today. React was the best choice JavaScript library for us to use as it is highly documented online and is backed by the world leading social media company Facebook. We were able to use many resources throughout the development cycle such as \href{https://reactjs.org/}{\textcolor{blue}{ReactJS Documentation}} and \href{https://stackoverflow.com/}{\textcolor{blue}{StackOverflow}}.
 \newline
 
 React has become a leading member of the JavaScript libraries which are extremely popular today. The main uses of React are to allow developers to created a large scale application in a fast, scalable and simple way. React is considered one of the easiest JavaScript libraries to learn as to start developing you only need basic knowledge of HTML and CSS, there are no limits when it comes to React as they are constantly updating their library and exploring new techniques for developers to utilise. 
 
 \newline
-
 MongoDB is an extremely simple out of the box database which is also highly used today. The ability to simply store data within collections inside of a MongoDB database and to receive the data within your application allows developers to move quickly. MongoDB has a user friendly interactive database where you can easily examine the data which is being passed and stored inside of your collections.
 
 \chapter{System Design}
@@ -124,18 +121,20 @@ The structure which we have implemented into our project was by dividing up the 
   \label{fig:Project Github Structure}
 \end{figure}
 
+
 \item \textbf{Class Components}
 
 All of our JavaScript files have been implemented using class components. The reason as to why we chose Class components instead of Functional components was because we were dealing with many state changes within our application and needed to utilise the support and logic that class components provide. The main differences between the two types of components are their syntax, Class components were the most familiar to us as it has a similar structure to Java.
 
 \newline
 
-\item \textbf{Heroku Deployment}
+\subsection{Heroku Deployment}
 
 Currently our project is being hosted using Heroku. This is the best option for our project as Heroku allows you to host up to five applications free of charge...
 
-\item \textbf{Displaying Lists and Feeds}
+\subsection{Displaying Lists and Feeds}
 The displaying of lists within our application allowed us to re-use a lot of components...
+
 
 
 \chapter{System Evaluation}
@@ -223,11 +222,41 @@ However, this wasn't the entire issue. Although the performance was better than 
 
 Throughout the development of this project we tried out many different User Interfaces and Front-End designs to try and find which was the most suitable layout for our project. We used software such as Figma and Wire framing to design and test our designs which we could implement, once we had three official designs we came to a conclusion on which one would be most suitable for our project to match its features.
 
-\chapter{Conclusion}
-Overall we have achieved our goal of developing an application where users could share opinions and join communities based off of their common interests. Throughout the development of this project we thought of many features we could implement and as we were creating these features we recognized what suited the application best and which features were not necessary as they were just increasing the complexity of the application.
+We faced a couple of issues when making sure that our website was robust and never failed carrying out specific functionalities. Below we discuss the problems that we encountered and how we overcame these problems. Making sure that the website is robust is extremely important for keeping users on your website and being an active user, because if it were to fail at carrying out the basic features then this would cause the user to become frustrated with the application and eventually give up on using it.
+\newline
 
-Ultimately, working as a team to produce this project has helped us to develop and improve on our team working skills and problem solving skills ...
+\subsection{Front-End}
+The most important design features to take into consideration while developing the application to be robust is that a front-end component is easily understood on what it does at first glance. Making sure that the website it responsive adds to the user friendly experience. While creating a complex design it makes responsiveness more difficult as there are many components which need to be considered at a range of sizes for example, Desktop, Laptop, Tablets and Smart Phones. This is why when we designed the websites user interface we made sure to keep it as slim as possible with a smaller amount of components as the website then serves its purpose and has no unnecessary junk.
+
+
+\subsection{Back-End}
+Working on the back-end proved to be more difficult then expected. For our application to be fully interwoven we would need to design our database efficiently. Initially when we made our database it was overloaded with unnecessary data. For example one collection would hold data that belonged to another. From our experiments and testing phase we redesigned our database so that we could link all collections via an id. This change resulted in our back-end being more robust. Minimizing the data held in each record....... 
+
+\chapter{Conclusion}
+Overall we have achieved our goal of developing an application where users could share opinions and join communities based off of their common interests. Throughout the development of this project we thought of many features we could implement and as we were creating these features we recognized what suited the application best and which features were not necessary as they were just increasing the complexity of the application. We made sure to stay on topic of the social media aspect of the application. If we went off topic and started to add unnecessary features it would increase the difficulty and time of the development process. This is why weekly meetings were so important as we would all be on the same page when it comes to weekly feature implementation. 
+
+\subsection{What we enjoyed}
+Working on this project was an enjoyable experience as we got to work on an application which we all had fun developing. From the very beginning when we were first capable of communicating through the website rather than any other platform it made us really want to improve the functionality and fluidity of the website. We could all communicate by posting on the feed in real time and comment under each others posts on bugs or issues we were facing. It was also exciting to see this website come to flourish step by step. Week by week as new features are implemented it would be intriguing to see all these features become linked together. Getting the chance to work on an exciting project within a team meant that we were always learning together and constantly challenging ourselves to produce a better website by keeping our standards high.
+
+\subsection{What we learned}
+This was valuable experience as we got a sense of working in a professional environment. Working as a team to produce this project has helped us to develop and improve on our team working skills and problem solving skills. Looking back at our tracked progress through GitHub we feel the consistency and team work was there, with over 330 commits during the course of the academic year. Through the development process we increased our ability to carry out extensive research, we used resources such as ReactJS documentation, MongoDB documentation, Stackoverflow, Reddit and YouTube to learn techniques and learn from experts in the industry about ways to tackle problems we may be facing. This was showcased in the beginning when we were looking at other websites. It was important we didn't blatantly copy another website but take inspiration from. This process of research helped our ability of critically thinking into design features and functionality. 
+Testing was another learning experience as we would always complete one features functionality which then led to another feature breaking. It was important that we maintained our process of testing throughout this project to end with a efficient website. This was something we got better at through the development process, at the start we didn't test as much as we would of liked to but with more bugs developing our testing became crucial. This is something we have really taken into consideration for future projects and to thoroughly test features throughout and after development and to not make too many changes within a single commit through GitHub.
+
+\subsection{System Evaluation Conclusion}
+\begin{itemize}
+    \item 1
+    \item 2
+    \item 3
+    \item 4
+\end{itemize}
+
+\subsection{What we would do differently}
+\newline
+Looking back on our development process there will always be something we could of designed our implemented to a higher level. Of course, when we started developing the project we had very little knowledge on how to develop a social media website, as the year progressed we learned new techniques and how to tackle specific features that are considered standard within social media websites. There are a few things we could have done differently from the beginning such as, researching how to implement certain features. Although through trial and error this definitely stood to us as we learned a lot about good and bad programming practices and the correct way to implement specific features. A final thing that we would do differently and we have definitely improved on is our use of time and planning out our sprints, sometimes we would get carried away and make too much progress one week and then a lot less progress the next week and then bugs would begin to appear. If we were more disciplined with our time management we could have faced a lot less problems but this is definitely a positive experience to take from the development of this project.
+\newline
+
+To conclude, This final year project gave us an opportunity to showcase what we learned over these four years. We gained valuable insights working regularly as a team of three progressing through the development phase using agile methodologies.
+This project also presented unexpected challenges whether it be data not pushing to the database or optimization, we did however overcome these obstacles finishing with a website we believe is accessible and intuitive to use that reaches a broad audience.
 
 \chapter{References}
-
-
+\cite{githublink}
