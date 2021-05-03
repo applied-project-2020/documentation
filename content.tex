@@ -43,7 +43,6 @@ GitHub was the obvious version control of choice. The development of the project
     \item \textbf{Mobile Application}: This repository is used to hold the mobile application version of our \textit{\textbf{zoosh}} app. Although it hasn't been kept as up-to-date as our web application, it was still an interesting application to develop. The mobile version was created using React Native, which isn't that different structurally from ReactJS, only requiring a couple of tweaks to our code.
 \end{itemize}
 
-\newpage
 
 \chapter{Context}
 The purpose of our project is to allow people to communicate through communities sharing ideas and knowledge whether it be news or comical. The objectives which we want to achieve from developing this project is to create and application where users can follow, react and comment and join communities as they wish without any restrictions.
@@ -144,10 +143,96 @@ All of our JavaScript files have been implemented using class components. The re
 
 Currently our project is being hosted using Heroku. This is the best option for our project as Heroku allows you to host up to five applications free of charge...
 
+\subsection{Forms}
+Forms within our application have been created in a simple and easy to use manner. Each text field within our forms are easily understood and do not confuse the user on what it is they are filling out. We decided to make our Login and Register pages very clean and simple with not a whole lot of noise or distraction surrounding it. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{img/login.PNG}
+  \label{fig:Login Screen}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{img/join.PNG}
+  \label{fig:Join Screen}
+\end{figure}
+
+\newpage
 \subsection{Displaying Lists and Feeds}
-The displaying of lists within our application allowed us to re-use a lot of components...
+
+The feeds are divided into two sections, the default section is to display the posts of users that you follow and the second section will display the top posts within the website. Below is an example of both screens that will appear for users when they navigate throughout both feeds.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.35]{img/following.PNG}
+  \label{fig:Following Feed.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.35]{img/top.PNG}
+  \label{fig:Top Posts Feed.}
+\end{figure}
+
+When a user has navigated to their account they will be able to edit their profile, the editing options have been limited to Name, Bio, Profile Picture and Password. This form is simple and clean with no confusing aspects within the user interface.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.45]{img/edit.PNG}
+  \label{fig:Edit Profile Screen.}
+\end{figure}
+
+\newpage
+\textbf{Lists}
+\newline
+The displaying of lists within our application allowed us to re-use a lot of components which was very important to stream line our projects architecture. Within our application there are recommended users and communities lists which are being randomly displayed from the entire database of users. Communities are displayed as round edged square and they will have the 'community' tag display under their profile, if a community page does not have a profile picture it will default to a grey background. Users avatars are displayed as a circle and they have a 'member' tag beneath their profile, and if a user doesn't have a profile picture they receive a default purple image.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{img/recommended.PNG}
+  \label{fig:Recommended Users and Communities Lists}
+\end{figure}
+
+\newline
+Another example of lists which we have implemented into our application is displaying users and communities within the database. These two lists have been separated into two pages and you can search the entire database for a user or community you wish to follow or join.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{img/users.png}
+  \label{fig:Search Users within the website.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{img/communities.PNG}
+  \label{fig:Communities within the website.}
+\end{figure}
+
+\newline 
+The two lists will filter as you type to the correct search result and you can navigate to their pages through their profiles card.
 
 
+\subsection{Likes and Comments}
+Early on when designing our website we wanted to incorporate likes and comments. Researching websites we knew this was a feature that is integral with a social media website. To set up the comments and likes we added an array for comments and a variable for likes. We tested having a collection for comments to see if would increase performance but it had no effect. With the test carried out we went forward with the array of comments. When a user adds a comment it posts an object to the comments array as shown.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{img/Commets_likes.PNG}
+  \label{fig:Comments And likes}
+\end{figure}
+Instead of refreshing the page after every like......
+
+\subsection{Notifications}
+Notifications was one of the last components to be implemented. Using a social media website notifications are an essential as you will know when somebody has liked your post or made a comment. This was a feature we wanted to incorporate from the beginning. 
+For this feature to work we needed to have the foundation of users being able to like and comment under a post. When these features were implemented we drew up a plan on a whiteboard of how we were going to tackle this feature. It would be relatively simple, when a user makes a comment/like on a post we would send that persons id,the user who created the posts id, the discussion id, and a message like "Clapped to your post" to the notifications collection. Once the notifications were in the database we could simple grab the data via the id and display this on a persons notifications page as shown here.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{img/notifications.PNG}
+  \label{fig:Notifications}
+\end{figure}
+It was important to have the function of clearing the notifications for efficiency as if the notifications built up it would reduce performance. These notifications are also given a timestamp of when they were created, this is done so we can order them from newest to oldest. The notifications feature underwent extensive testing to ensure it would be efficient as possible. Originally we had the notifications be an array under each user. As with each new notification the user collection would grow to a point where it slowed down load times. This is when we decided to redesign the structure and create a new collection for notifications, in doing so only a handful of records are being loaded in at a time increasing performance.
+
+\subsection{Retrieving data}
 
 \chapter{System Evaluation}
 
@@ -234,7 +319,7 @@ However, this wasn't the entire issue. Although the performance was better than 
 Throughout the development of this project we tried out many different User Interfaces and Front-End designs to try and find which was the most suitable layout for our project. We used software such as Figma and Wire framing to design and test our designs which we could implement, once we had three official designs we came to a conclusion on which one would be most suitable for our project to match its features.
 
 \chapter{Conclusion}
-Overall we have achieved our goal of developing an application where users could share opinions and join communities based off of their common interests. Throughout the development of this project we thought of many features we could implement and as we were creating these features we recognized what suited the application best and which features were not necessary as they were just increasing the complexity of the application. We made sure to stay on topic of the social media aspect of the application. If we went off topic and started to add unnecessary features it would increase the difficulty and time of the development process. This is why weekly meetings were so important as we would all be on the same page when it comes to weekly feature implementation. 
+Overall we have achieved our goal of developing an application where users could share opinions and join communities based off of their common interests. Throughout the development of this project we thought of many features we could implement and as we were creating these features we recognized what suited the application best and which features were not necessary as they were just increasing the complexity of the application. We made sure to stay on topic of the social media aspect of the application. If we went off topic and started to add unnecessary features it would increase the difficulty and time of the development process. This is why meetings were so important as we would all be on the same page when it comes to weekly feature implementation. 
 
 \subsection{What we enjoyed}
 Working on this project was an enjoyable experience as we got to work on an application which we all had fun developing. From the very beginning when we were first capable of communicating through the website rather than any other platform it made us really want to improve the functionality and fluidity of the website. We could all communicate by posting on the feed in real time and comment under each others posts on bugs or issues we were facing. It was also exciting to see this website come to flourish step by step. Week by week as new features are implemented it would be intriguing to see all these features become linked together. Getting the chance to work on an exciting project within a team meant that we were always learning together and constantly challenging ourselves to produce a better website by keeping our standards high.
@@ -242,6 +327,7 @@ Working on this project was an enjoyable experience as we got to work on an appl
 \subsection{What we learned}
 This was valuable experience as we got a sense of working in a professional environment. Working as a team to produce this project has helped us to develop and improve on our team working skills and problem solving skills. Looking back at our tracked progress through GitHub we feel the consistency and team work was there, with over 330 commits during the course of the academic year. Through the development process we increased our ability to carry out extensive research, we used resources such as ReactJS documentation, MongoDB documentation, Stackoverflow, Reddit and YouTube to learn techniques and learn from experts in the industry about ways to tackle problems we may be facing. This was showcased in the beginning when we were looking at other websites. It was important we didn't blatantly copy another website but take inspiration from. This process of research helped our ability of critically thinking into design features and functionality. 
 Testing was another learning experience as we would always complete one features functionality which then led to another feature breaking. It was important that we maintained our process of testing throughout this project to end with a efficient website. This was something we got better at through the development process, at the start we didn't test as much as we would of liked to but with more bugs developing our testing became crucial. This is something we have really taken into consideration for future projects and to thoroughly test features throughout and after development and to not make too many changes within a single commit through GitHub.
+The experience we have gained using Agile methodologies gave us the confidence that when we work for a company we will have the necessary thought process of working in a professional environment. 
 
 \subsection{System Evaluation Conclusion}
 \begin{itemize}
@@ -257,7 +343,9 @@ Looking back on our development process there will always be something we could 
 \newline
 
 To conclude, This final year project gave us an opportunity to showcase what we learned over these four years. We gained valuable insights working regularly as a team of three progressing through the development phase using agile methodologies.
-This project also presented unexpected challenges whether it be data not pushing to the database or optimization, we did however overcome these obstacles finishing with a website we believe is accessible and intuitive to use that reaches a broad audience.
+We were also presented with unexpected challenges whether it be data not pushing to the database or optimization, we did however overcome these obstacles finishing with a website we believe is accessible and intuitive to use that reaches a broad audience.
+\newline
+Ultimately, we are happy with the outcome and final version of the website and are grateful for the knowledge and experience we have gained. We would also like to thank our mentor Kevin 0'Brien for supporting us along the way if we had any issues.
 
 \chapter{References}
 \cite{githublink}
