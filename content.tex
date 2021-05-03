@@ -102,8 +102,47 @@ Stress testing was vital in the development of our application to ensure our app
 
 \end{itemize}
 
+\chapter{Technology Review}
 
-\chapter{Experiments}
+The development stack that we chose for this project was the M.E.R.N stack. This development stack consists of MongoDB, Express.js, React,js and Node.js. We chose this stack as it was best way for us to spread the work load throughout the group as it touches all areas of website development such as front-end, back-end and databases. The M.E.R.N stack is a highly used development stack within industry and across many well respected applications we use today. React was the best choice JavaScript library for us to use as it is highly documented online and is backed by the world leading social media company Facebook. We were able to use many resources throughout the development cycle such as \href{https://reactjs.org/}{\textcolor{blue}{Reactjs Documentation}} and \href{https://stackoverflow.com/}{\textcolor{blue}{StackOverflow}}.
+
+\newline
+
+React has become a leading member of the JavaScript libraries which are extremely popular today. The main uses of React are to allow developers to created a large scale application in a fast, scalable and simple way. React is considered one of the easiest JavaScript libraries to learn as to start developing you only need basic knowledge of HTML and CSS, there are no limits when it comes to React as they are constantly updating their library and exploring new techniques for developers to utilise. 
+
+\newline
+
+MongoDB is an extremely simple out of the box database which is also highly used today. The ability to simply store data within collections inside of a MongoDB database and to receive the data within your application allows developers to move quickly. MongoDB has a user friendly interactive database where you can easily examine the data which is being passed and stored inside of your collections.
+
+\chapter{System Design}
+
+The structure which we have implemented into our project was by dividing up the Back-End and Client (containing Front-End components) into separate folders. This way we could easily distinguish which areas we were working on as both folders contain a large amount of scripts which relate to their desired areas. We decided to structure our project this way as from our research this seemed to be the most standard and mainstream structure that is being used within the industry. Inside of each folder the command 'npm install' must be used to install all the project dependencies, previously we had the Server and Client combined together within the same folder. This proved to be quite messy and meant the amount of dependencies being installed at the same time would slow down the process of development. By dividing them into separate folders it meant the members working on Back-End content did not need to install dependencies which were being used by the members working on the Front-End components.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.65]{img/structure.PNG}
+  \label{fig:Project Github Structure}
+\end{figure}
+
+\item \textbf{Class Components}
+
+All of our JavaScript files have been implemented using class components. The reason as to why we chose Class components instead of Functional components was because we were dealing with many state changes within our application and needed to utilise the support and logic that class components provide. The main differences between the two types of components are their syntax, Class components were the most familiar to us as it has a similar structure to Java.
+
+\newline
+
+\item \textbf{Heroku Deployment}
+
+Currently our project is being hosted using Heroku. This is the best option for our project as Heroku allows you to host up to five applications free of charge...
+
+\item \textbf{Displaying Lists and Feeds}
+The displaying of lists within our application allowed us to re-use a lot of components...
+
+
+\chapter{System Evaluation}
+
+We faced many issues when making sure that our website was robust and never failed carrying out specific functionalities. Below we discuss the problems that we encountered and how we overcame these problems. Making sure that the website is robust is extremely important for keeping users on your website and being an active user, because if it were to fail at carrying out the basic features then this would cause the user to become frustrated with the application and eventually give up on using it.
+\newline
+
 We tried out many of different experiments throughout the development of our project to improve its user experience and run-times. Between Front End and Back End we tried out many different design patterns and user interfaces that would suit our project and through trial and error found the best suitable solutions to suit our needs. We were able to utilize Googles \href{https://developers.google.com/web/tools/lighthouse/}{\textcolor{blue}{Lighthouse}} performance testing tool, and also the \href{https://developer.chrome.com/docs/devtools/evaluate-performance/}{\textcolor{blue}{Performance}} tab in Chrome DevTools to examine our load times.
 \newline
 
@@ -154,7 +193,14 @@ After analyzing the performance of the website using the \href{https://developer
 
 \newline
 
-However, this wasn't the entire issue. Although the performance was better than before, there was clearly still more problems at hand as it was still quite low comparative to other websites, such as Facebook which had a performance of 80 when analyzed with Lighthouse. Through much deliberation and many days of discussion, and after looking through many forums and articles for building fast React applications, we determined that the storage of large photos was slowing down the load times dramatically. We found that the best practices which are being used in industry is to store the large photos on an external server such as Amazon AWS and link them back to our application. This helped us to achieve satisfying results as our applications load times improved dramatically and our Google Lighthouse Performance was showing better results.
+However, this wasn't the entire issue. Although the performance was better than before, there was clearly still more problems at hand as it was still quite low comparative to other websites, such as Facebook which had a performance of 80 when analyzed with Lighthouse. Through much deliberation and many days of discussion, and after looking through many forums and articles for building fast React applications, we determined that the storage of large photos was slowing down the load times dramatically. We found that the best practices which are being used in industry is to store the large photos on an external server such as Amazon AWS and link them back to the required application. We decided to take this approach and after researching further, the consensus seemed to be that Amazon S3, a simple cloud storage service could be used to solve our large image problem. This took quite a while to implement as we had to set up a .env file which contained all of the secret keys, ip's, etc. We also had to implement a new package called \href{https://github.com/expressjs/multer}{\textcolor{blue}{Multer}} to handle the uploading of files to our S3 bucket. Once the image file gets uploaded to the S3 bucket the URL of it is then stored on our MongoDB database, drastically reducing load times and increase performance to an acceptable standard[\ref{fig:highest_lighthouse}].
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{img/best_lighthouse.jpg}
+  \caption{Highest Lighthouse Performance}
+  \label{fig:highest_lighthouse}
+\end{figure}
 
 \newline
 
@@ -176,54 +222,6 @@ However, this wasn't the entire issue. Although the performance was better than 
 \end{itemize}
 
 Throughout the development of this project we tried out many different User Interfaces and Front-End designs to try and find which was the most suitable layout for our project. We used software such as Figma and Wire framing to design and test our designs which we could implement, once we had three official designs we came to a conclusion on which one would be most suitable for our project to match its features.
-
-\chapter{Technology Review}
-
-The development stack that we chose for this project was the M.E.R.N stack. This development stack consists of MongoDB, Express.js, React,js and Node.js. We chose this stack as it was best way for us to spread the work load throughout the group as it touches all areas of website development such as front-end, back-end and databases. The M.E.R.N stack is a highly used development stack within industry and across many well respected applications we use today. React was the best choice JavaScript library for us to use as it is highly documented online and is backed by the world leading social media company Facebook. We were able to use many resources throughout the development cycle such as \href{https://reactjs.org/}{\textcolor{blue}{Reactjs Documentation}} and \href{https://stackoverflow.com/}{\textcolor{blue}{StackOverflow}}.
-
-\newline
-
-React has become a leading member of the JavaScript libraries which are extremely popular today. The main uses of React are to allow developers to created a large scale application in a fast, scalable and simple way. React is considered one of the easiest JavaScript libraries to learn as to start developing you only need basic knowledge of HTML and CSS, there are no limits when it comes to React as they are constantly updating their library and exploring new techniques for developers to utilise. 
-
-\newline
-
-MongoDB is an extremely simple out of the box database which is also highly used today. The ability to simply store data within collections inside of a MongoDB database and to receive the data within your application allows developers to move quickly. MongoDB has a user friendly interactive database where you can easily examine the data which is being passed and stored inside of your collections.
-
-\chapter{System Design}
-
-The structure which we have implemented into our project was by dividing up the Back-End and Client (containing Front-End components) into separate folders. This way we could easily distinguish which areas we were working on as both folders contain a large amount of scripts which relate to their desired areas. We decided to structure our project this way as from our research this seemed to be the most standard and mainstream structure that is being used within the industry. Inside of each folder the command 'npm install' must be used to install all the project dependencies, previously we had the Server and Client combined together within the same folder. This proved to be quite messy and meant the amount of dependencies being installed at the same time would slow down the process of development. By dividing them into separate folders it meant the members working on Back-End content did not need to install dependencies which were being used by the members working on the Front-End components.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.65]{img/structure.PNG}
-  \label{fig:Project Github Structure}
-\end{figure}
-
-
-\item \textbf{Class Components}
-
-All of our JavaScript files have been implemented using class components. The reason as to why we chose Class components instead of Functional components was because we were dealing with many state changes within our application and needed to utilise the support and logic that class components provide. The main differences between the two types of components are their syntax, Class components were the most familiar to us as it has a similar structure to Java.
-
-\newline
-
-\item \textbf{Heroku Deployment}
-
-Currently our project is being hosted using Heroku. This is the best option for our project as Heroku allows you to host up to five applications free of charge...
-
-\item \textbf{Displaying Lists and Feeds}
-The displaying of lists within our application allowed us to re-use a lot of components...
-
-
-\chapter{System Evaluation}
-We faced a couple of issues when making sure that our website was robust and never failed carrying out specific functionalities. Below we discuss the problems that we encountered and how we overcame these problems. Making sure that the website is robust is extremely important for keeping users on your website and being an active user, because if it were to fail at carrying out the basic features then this would cause the user to become frustrated with the application and eventually give up on using it.
-\newline
-
-\subsection{Front-End}
-The most important design features to take into consideration while developing the application to be robust is that a front-end component is easily understood on what it does at first glance. Making sure that the website it responsive adds to the user friendly experience. While creating a complex design it makes responsiveness more difficult as there are many components which need to be considered at a range of sizes for example, Desktop, Laptop, Tablets and Smart Phones. This is why when we designed the websites user interface we made sure to keep it as slim as possible with a smaller amount of components as the website then serves its purpose and has no unnecessary junk.
-
-
-\subsection{Back-End}
-Working on the back-end proved to be more difficult then expected. For our application to be fully interwoven we would need to design our database efficiently. Initially when we made our database it was overloaded with unnecessary data. For example one collection would hold data that belonged to another. From our experiments and testing phase we redesigned our database so that we could link all collections via an id. This change resulted in our back-end being more robust. Minimizing the data held in each record....... 
 
 \chapter{Conclusion}
 Overall we have achieved our goal of developing an application where users could share opinions and join communities based off of their common interests. Throughout the development of this project we thought of many features we could implement and as we were creating these features we recognized what suited the application best and which features were not necessary as they were just increasing the complexity of the application.
