@@ -188,6 +188,27 @@ If a user wishes to create a post they can click the button 'Write a Post' on th
   \label{fig:Create Post Modal.}
 \end{figure}
 
+We are storing each community inside of its own collection within our MongoDB database. Each community consists of its general information and a users array to store the members of the community.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.85]{img/SocsCollection.PNG}
+  \label{fig:Communities Collection - MongoDB.}
+\end{figure}
+
+\newpage
+\textbf{Create a Post}
+\newline
+If a user wishes to create a post they can click the button 'Write a Post' on the feed pages and another modal pop up form will appear prompting the user to fill out the required sections for a post. A post must consist of a heading so that users will get a brief insight to what the post is about on the feed pages. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.35]{img/createpost.PNG}
+  \label{fig:Create Post Modal.}
+\end{figure}
+
+We are storing each post inside of its own collection within our MongoDB database. Each post consists of its the posting users id, a comments array to handle communication within the unique post, the communities id which it was posted under, a likes counter, the general post details such as the title, content, thumbnail and timestamps to determine when the post was created. 
+
 \newpage
 \subsection{Displaying Lists and Feeds}
 
@@ -248,7 +269,7 @@ When a user likes a discussion it will update the likes in the discussion and th
 
 \subsection{Notifications}
 Notifications was one of the last components to be implemented. Using a social media website notifications are an essential as you will know when somebody has liked your post or made a comment. This was a feature we wanted to incorporate from the beginning. 
-For this feature to work we needed to have the foundation of users being able to like and comment under a post. When these features were implemented we drew up a plan on a whiteboard of how we were going to tackle this feature. It would be relatively simple, when a user makes a comment/like on a post we would send that persons id,the user who created the posts id, the discussion id, and a message like "Clapped to your post" to the notifications collection. Once the notifications were in the database we could simple grab the data via the id and display this on a persons notifications page as shown here.
+For this feature to work we needed to have the foundation of users being able to like and comment under a post. When these features were implemented we drew up a plan on a whiteboard of how we were going to tackle this feature. It would be relatively simple, when a user makes a comment/like on a post we would send that persons id,the user who created the posts id, the discussion id, and a message like "Liked your post" to the notifications collection. Once the notifications were in the database we could simple grab the data via the id and display this on a persons notifications page as shown here.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.55]{img/notifications.PNG}
@@ -257,12 +278,34 @@ For this feature to work we needed to have the foundation of users being able to
 It was important to have the function of clearing the notifications for efficiency as if the notifications built up it would reduce performance. These notifications are also given a timestamp of when they were created, this is done so we can order them from newest to oldest. The notifications feature underwent extensive testing to ensure it would be efficient as possible. Originally we had the notifications be an array under each user. As with each new notification the user collection would grow to a point where it slowed down load times. This is when we decided to redesign the structure and create a new collection for notifications, in doing so only a handful of records are being loaded in at a time increasing performance.
 
 \subsection{Reading List}
-This was a feature we thought early on would be a feature to complement the website. When a user goes to a discussion they can click a button to add to their reading list. In doing so they have the opportunity to view this post at a later time. When the user clicks on one of the posts in their reading list they will be brought to the post.
-To remove the a post from the discussion list they can go back to the post and click on the button again to remove it.
+This was a feature we thought early on would be a feature to complement the website. When a user goes to a discussion they can click a button to add to their reading list. In doing so they have the opportunity to view this post at a later time.The the user adds a discussion to their reading list it's only saving the id of the discussion so it works at an optimal speed. When we are retrieving the data we can use the id to search for the discussion. The number displayed is simply counting the size of the array. A view of the reading list can be seen below.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{img/ReadingList.PNG}
+  \label{fig:Readinglist}
+\end{figure}
+To remove the a post from the discussion list they can go back to the post and click on the button again to remove it. Once they have removed it from the list a message will appear confirming you have removed it.
+
+\subsection{Profiles}
+We wanted the website to feel unique to each user, this is why profiles are so important. When a user visits their own profile they will see a some option only they can see for example, deleting their posts and editing their profile. This is done through a check before the page loads in. When a user is logged in the id is saved to local storage, this id is then compared to that of the profile page you are on. An example of a profile page is shown below.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{img/Profile.PNG}
+  \label{fig:Profile}
+\end{figure}
+Each post contains the user id of the person who created it, this is done so we can then show them on the profile page.
+
+If you view another user's profile you will get the option to follow them or view their posts. 
+The follow/unfollow was a feature we felt at the start we needed. All social media platforms have some type of follow/unfollow whether it be adding a friend or making a connection. In our website this works when a user clicks the follow button, that user's id will be saved to your following list and your id will be saved to their followers list. When you view a person page you follow, a check will be done to see if you follow them or not. If you do follow them the button shown will be unfollow and vice verse for someone you do not follow. An example of this is shown below.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{img/OtherProfile.PNG}
+  \label{fig:OtherProfile}
+\end{figure}
 
 \subsection{Retrieving Data}
 
-Retrieving data is an important component of any data heavy website. And as social medias are notoriously data-driven, filled with interactions between users, photo sharing, commenting, and liking, the performance and layout of the back-end became an extremely important aspect of the application. The layout of the backend was seperated very soon after development began, as we noted that the server.js file became increasingly large and complex. We separated the server components into two subfolders: routes, and models. The routes folder contains all of the routes for making requests to the server. For example, in discussions.js, the \textit{get-discussions} [\ref{fig:Get Discussions Route}] route takes in the parameters \textit{fields}, and \textit{limit}. The \textit{fields} variable is used for selecting only the required fields from each document in the database. This greatly increased efficiency when making requests, as the requests weren't returning everything inside the required document. The \textit{limit} variable is used to return only a certain number of documents from the database. There are five route files in the routes folder:
+Retrieving data is an important component of any data heavy website. And as social medias are notoriously data-driven, filled with interactions between users, photo sharing, commenting, and liking, the performance and layout of the back-end became an extremely important aspect of the application. The layout of the back-end was separated very soon after development began, as we noted that the server.js file became increasingly large and complex. We separated the server components into two sub folders: routes, and models. The routes folder contains all of the routes for making requests to the server. For example, in discussions.js, the \textit{get-discussions} [\ref{fig:Get Discussions Route}] route takes in the parameters \textit{fields}, and \textit{limit}. The \textit{fields} variable is used for selecting only the required fields from each document in the database. This greatly increased efficiency when making requests, as the requests weren't returning everything inside the required document. The \textit{limit} variable is used to return only a certain number of documents from the database. There are five route files in the routes folder:
 
 \begin{itemize}
     \item \textbf{Discussions.js}: Contains all of the routes for the creation, reading, updating or deleting of \textbf{discussion} data.
@@ -277,6 +320,19 @@ Retrieving data is an important component of any data heavy website. And as soci
   \includegraphics[scale=0.5]{img/get-discussions.jpg}
   \label{fig:Get Discussions Route}
 \end{figure}
+
+\newpage
+\subsection{User Interface Implementation}
+All of the User Interface components have been implemented using standard HTML and CSS, although for certain aspects such as layout and resizing we were able to utilise React Bootstrapping \cite{react-bootstrap} to achieve the correct layout to streamline between devices. Thanks to the node package manager we can easily install this bootstrapping library and use all of its components. For any designs which cannot be achieved through bootstrapping we have created through our internal assets.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{img/assets.PNG}
+  \label{fig:Internal Assets.}
+\end{figure}
+
+All of the icons that we have used are a free open source icon library which is provided by React \cite{react-icons}. These icons were extremely beneficial as in modern development of web and mobile applications icons can make or break how a user interacts with the application so making sure that the icons were used appropriately was crucial. 
+
 
 \chapter{System Evaluation}
 
@@ -344,23 +400,22 @@ However, this wasn't the entire issue. Although the performance was better than 
 
 \newline
 
-\begin{itemize}
-    \item Website Runtimes
-    \item Responsiveness
-    \item Speeds and Performance
-    \item Loading in images via MongoDB/Amazon
-\end{itemize}
 
 \begin{itemize}
-    \item Front End
     \item Colorways
-    \item UI
-    \item FIGMA, WIREFRAME
     \item Design Decisions
-    \item Icon imports, Boostrapping
 \end{itemize}
 
-Throughout the development of this project we tried out many different User Interfaces and Front-End designs to try and find which was the most suitable layout for our project. We used software such as Figma and Wire framing to design and test our designs which we could implement, once we had three official designs we came to a conclusion on which one would be most suitable for our project to match its features.
+\subsection{Wire framing Designs}
+
+Throughout the development of this project we tried out many different User Interfaces and Front-End designs to try and find which was the most suitable layout for our project. We used software such as Figma and Wire framing to design and test our designs which we could implement. Figma is a browser based User Interface and User Experience platform that allows you to create and prototype designs within minutes \cite{figma}. Once we had three official designs we came to a conclusion on which one would be most suitable for our project to match its features. The design has taken inspiration from existing social media platforms and has been tweaked to suit the websites functions. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{img/FIGMA.PNG}
+  \caption{Figma Design.}
+  \label{fig:Figma design.}
+\end{figure}
 
 \chapter{Conclusion}
 Overall we have achieved our goal of developing an application where users could share opinions and join communities based off of their common interests. Throughout the development of this project we thought of many features we could implement and as we were creating these features we recognized what suited the application best and which features were not necessary as they were just increasing the complexity of the application. We made sure to stay on topic of the social media aspect of the application. If we went off topic and started to add unnecessary features it would increase the difficulty and time of the development process. This is why meetings were so important as we would all be on the same page when it comes to weekly feature implementation. 
