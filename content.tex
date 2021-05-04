@@ -163,7 +163,7 @@ All of our JavaScript files have been implemented using class components. The re
 
 \subsection{Heroku Deployment}
 
-Currently our project is being hosted using Heroku. This is the best option for our project as Heroku allows you to host up to five applications free of charge...
+Currently our project is being hosted using Heroku. This is the best option for our project as Heroku allows you to host up to five applications free of charge. To deploy to Heroku the application had to undergo a number of changes. To stop this from interfering with the way we were locally developing the application, we created a new branch on GitHub named 'heroku-deployment' which had the correct layout and configuration for deploying to Heroku. After following a tutorial, the server.js now had set up environment variables for dynamic ports depending on which port Heroku chose for the server. The package.json also had to have a "heroku-prebuild" script implemented, which installs client and server packages, and subsequently runs them\cite{herokudeployment}.
 
 \subsection{Forms}
 Forms within our application have been created in a simple and easy to use manner. Each text field within our forms are easily understood and do not confuse the user on what it is they are filling out. We decided to make our Login and Register pages very clean and simple with not a whole lot of noise or distraction surrounding it. 
@@ -275,7 +275,7 @@ Another example of lists which we have implemented into our application is displ
 \end{figure}
 
 \newline 
-The two lists will filter as you type to the correct search result and you can navigate to their pages through their profiles card.
+The two lists will filter as you type to the correct search result and you can navigate to their pages through their profiles card. Upon initially loading the communities or user list pages, skeleton grey loading icons are displayed in place of the communities. Once the communities are retrieved from the database, the state is updated and the communities are displayed in place of the skeleton icons. The communities list is looped through in the React render function by utilizing the map function that is common to Javascript. These lists are randomized each time the user enters the communities list by using the .shuffle method.
 
 
 \subsection{Likes and Comments}
@@ -342,6 +342,36 @@ Retrieving data is an important component of any data heavy website. And as soci
   \includegraphics[scale=0.5]{img/get-discussions.jpg}
   \label{fig:Get Discussions Route}
 \end{figure}
+
+This route is accessed through use of \href{https://github.com/axios/axios}{\textcolor{blue}{Axios}}. Axios is a promise-based HTTP client for node.js and the browser. We used it to make HTTP requests to the node.js server, to retrieve data to be used in the front-end. Axios is imported using the \textit{import axios from 'axios'} statement at the top of each React class. It is then utilized using the \textit{axios.get(route, {params})} method.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{img/get-user-details-axios.jpg}
+  \caption{Axios Get Request}
+  \label{fig:Get Axios Route}
+\end{figure}
+
+As you can see above [\ref{fig:Get Axios Route}], the data is requested from the server through axios by calling a HTTP get request. The route corresponds to the route for getting user details as specified in the users file. The response data is then returned from the request and allocated into the respective state variables. This data is then used on the page to display if a post is liked or not by the user, the societies the user is in, etc.
+
+The structure of data contained in the database is described in each of the model files within the models folder. There are five schemas in the models folder:
+
+\begin{itemize}
+    \item Discussion.js - Outlines the database schema for discussions
+    \item Forum.js - Outlines the database schema for forums
+    \item Notification.js - Outlines the database schema for notifications
+    \item Society.js - Outlines the database schema for societies
+    \item User.js - Outlines the database schema for users
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{img/discussion_schema.jpg}
+  \caption{Discussion Schema}
+  \label{fig:Discussion Schema}
+\end{figure}
+
+As you can see in figure [\ref{fig:Discussion Schema}] there are multiple variables contained within the schema for storing data. There are specific variables for discussions such as: title, caption, content, time, full picture (the large scale picture to display when viewing the full discussion page), or the thumbnail picture which is displayed in the feed to reduce cost of displaying multiple images. There are also variables which store the society that is tagged when the post in made.
 
 \newpage
 \subsection{User Interface Implementation}
