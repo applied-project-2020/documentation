@@ -2,7 +2,7 @@
 
 \chapter*{About this project}
 \paragraph{Abstract}
-This project is an Social Media platform where you can create communities, post up discussions and follow your friends. . . .  etc etc
+This project is a Social Media platform where you can create communities, post up discussions and follow your friends. Our goal was to create a platform that performs well under stress testing and has very fast loading speeds while handling data through requests.
 
 \paragraph{Authors}
 Aaron Moran, Conor Shortt, Thomas Kenny.
@@ -117,10 +117,32 @@ Stress testing was vital in the development of our application to ensure our app
 The development stack that we chose for this project was the M.E.R.N stack. This development stack consists of MongoDB, Express.js, React,js and Node.js. We chose this stack as it was best way for us to spread the work load throughout the group as it touches all areas of website development such as front-end, back-end and databases. The M.E.R.N stack is a highly used development stack within industry and across many well respected applications we use today. React was the best choice JavaScript library for us to use as it is highly documented online and is backed by the world leading social media company Facebook. We were able to use many resources throughout the development cycle such as \href{https://reactjs.org/}{\textcolor{blue}{ReactJS Documentation}} and \href{https://stackoverflow.com/}{\textcolor{blue}{StackOverflow}}.
 \newline
 
+\subsection{ReactJS}
 React has become a leading member of the JavaScript libraries which are extremely popular today. The main uses of React are to allow developers to created a large scale application in a fast, scalable and simple way. React is considered one of the easiest JavaScript libraries to learn as to start developing you only need basic knowledge of HTML and CSS, there are no limits when it comes to React as they are constantly updating their library and exploring new techniques for developers to utilise. 
-
+React uses a virtual DOM, this is similar to the browser DOM but it is stored in memory. When the render method gets called changes are made to the virtual DOM first. A diff() algorithm is used to compare the changes and updates. If there are changes they are only shown in the browser DOM, this makes Reacts performance second to none \cite{aggarwal2018modern}. Comparing this to AngularJS which uses a regular DOM the performance of React is greater than Angular because of the virtual DOM \cite{kumar2016comparative}
 \newline
+
+\subsection{NodeJS}
+NodeJS has been extremely important in the functionality of our website as it handles all of our server environment, without this our website would not function as no data would be loaded in and users would not be able to access the website. Node handles all of our Create, Open, Read, Delete and Update functionality. Node handles all of our form data and passes it to the correct collections within our MongoDB database.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{img/server.PNG}
+  \label{fig:NodeJS Server running.}
+\end{figure}
+
+\subsection{MongoDB}
 MongoDB is an extremely simple out of the box database which is also highly used today. The ability to simply store data within collections inside of a MongoDB database and to receive the data within your application allows developers to move quickly. MongoDB has a user friendly interactive database where you can easily examine the data which is being passed and stored inside of your collections.
+After reviewing a paper found on the International Journal of Engineering Research and Technology MongoDB suited the needs of our application \cite{chauhan2019review}. With our website being data heavy scalability was an important feature we looked for in a database and MongoDB provides that. The more users that used our website we could handle as the database can be scaled easily. MongoDB also provides us with dynamic queries. This was vital in the development phase as we could cherry pick data that we needed at a time. This also increased performance of the website. A social website that is data heavy needs to be able to back up data in case of a crash or malfunction. MongoDB provides us with the ability to easily replicate data in case such incident may occur with its high availability and replication. So if a users data was lost or corrupted we would have a backup of that data and simply revert the users data.
+With our website holding numerous object arrays MongoDB's json format was perfect for exploring our database. MongoDB's document oriented storage helped save time during the developing process.\cite{MongoDB}
+Having a flexible schema provided us with the opportunity to swap and change names and values in a short space of time if necessary. Throughout our development process we added, removed and changed collections in our database, using a NoSQL database made this efficient to do.
+
+\subsection{Styling and Bootstrapping}
+We have followed all of the community and industry standards in regards to styling and bootstrapping our application. We have looked in detail to the correct colorways and decided to use 'Blue' as our main color scheme as psychologically it is considered as the worlds favourite color. Colors are an extremely important factor to a websites design especially if it is a social media platform where you want your users to be engaged with the material that they follow and read \cite{singh2011impact}. If the color scheme of the website does not match the website, the conversion rate will begin to decrease as people do not feel as engaged as they would on other platforms that understand the psychology of the user and what the user wants.
+
+\subsection{Simplicity}
+From the very beginning of the development process we have always kept simplicity in mind. This way we limited the website to a specific amount of features and functionalities and this also stream lines with the Front-End design of the application. Our website implements each feature without overloading the user with information.
+
 
 \chapter{System Design}
 
@@ -358,7 +380,7 @@ We then vastly reduced the amount of data shared information between collections
 Changing this structure within the communication between our collections saved us many resources and storage space within our database. This only marginally improved load times but was a success as it made our website perform at a higher speed than previously, and we learned a new solution to sharing information within our application which could be applied to many other features and functionalities.
 \newline
 
-However, even after optimizing the design of the database and making sure that no model contained unnecessary data, the website was still performing extremely poorly on \href{https://developers.google.com/web/tools/lighthouse/}{\textcolor{blue}{Lighthouse}} scores [\ref{fig:poor_lighthouse}]. As you can see from this figure everything except for performance was scored highly, and as the Chrome Devtools only analyze network requests and front-end components, we presumed the problem was within the structure of the database and as we had already restructured the models, we determined that the queries that were providing data to the get requests were the problem.
+However, even after optimizing the design of the database and making sure that no model contained unnecessary data, the website was still performing extremely poorly on \href{https://developers.google.com/web/tools/lighthouse/}{\textcolor{blue}{Lighthouse}} scores [\ref{fig:poor_lighthouse}]. As you can see from this figure everything except for performance was scored highly, and as the Chrome DevTools only analyze network requests and front-end components, we presumed the problem was within the structure of the database and as we had already restructured the models, we determined that the queries that were providing data to the get requests were the problem.
 
 \begin{figure}[H]
   \centering
@@ -400,13 +422,7 @@ However, this wasn't the entire issue. Although the performance was better than 
 
 \newline
 
-
-\begin{itemize}
-    \item Colorways
-    \item Design Decisions
-\end{itemize}
-
-\subsection{Wire framing Designs}
+\subsection{Wire Framing Designs}
 
 Throughout the development of this project we tried out many different User Interfaces and Front-End designs to try and find which was the most suitable layout for our project. We used software such as Figma and Wire framing to design and test our designs which we could implement. Figma is a browser based User Interface and User Experience platform that allows you to create and prototype designs within minutes \cite{figma}. Once we had three official designs we came to a conclusion on which one would be most suitable for our project to match its features. The design has taken inspiration from existing social media platforms and has been tweaked to suit the websites functions. 
 
@@ -414,7 +430,7 @@ Throughout the development of this project we tried out many different User Inte
   \centering
   \includegraphics[scale=0.4]{img/FIGMA.PNG}
   \caption{Figma Design.}
-  \label{fig:Figma design.}
+  \label{fig:Final Figma design.}
 \end{figure}
 
 \chapter{Conclusion}
@@ -430,10 +446,10 @@ The experience we have gained using Agile methodologies gave us the confidence t
 
 \subsection{System Evaluation Conclusion}
 \begin{itemize}
-    \item 1
-    \item 2
-    \item 3
-    \item 4
+    \item Create a social media platform.
+    \item Achieve a satisfying level of optimization.
+    \item Design a smooth and user friendly website.
+    \item Successful testing performance across all the features.
 \end{itemize}
 
 \subsection{What we would do differently}
