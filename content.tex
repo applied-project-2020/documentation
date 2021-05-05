@@ -123,7 +123,11 @@ React uses a virtual DOM, this is similar to the browser DOM but it is stored in
 \newline
 
 \section{NodeJS}
-NodeJS has been extremely important in the functionality of our website as it handles all of our server environment, without this our website would not function as no data would be loaded in and users would not be able to access the website. Node handles all of our Create, Open, Read, Delete and Update functionality. Node handles all of our form data and passes it to the correct collections within our MongoDB database.
+Using NodeJS has many benefits within web and mobile development, some of the main advantages of Node are its high performance, its extremely scalable, its easy to learn and implement and has a large community to provide help and guidance for any issues you may be facing. NodeJS has been extremely important in the functionality of our website as it handles all of our server-side functionality, without this our website would not function as no data would be loaded in and users would not be able to access the website. Node performs all of our Create, Open, Read, Delete and Update functionality and handles all of our form data and passes it to the correct collections within our MongoDB database. 
+
+Reasons as to why we chose Node are because they have become a big player within the web application industry. Major companies such as Uber, Netflix and PayPal all implement NodeJS into their applications as it has increased their performance and simplifies Back-End programming \cite{NetflixNodeJS}. This gave us enough confidence to choose NodeJS to handle our server-side environments. 
+
+NodeJS also provides developers with its own package manager knows as 'npm'. This is the most common and most popular package manager used for web and mobile application development as it allows you to install third party libraries to speed up and help with the development process. We have utilised the node package manager within our project for many of features and functionalities, through this we were able to install third party libraries such as React Bootstrap for Front-End design and Bcrypt which is a password hashing function to keep our users passwords secure.
 
 \begin{figure}[H]
   \centering
@@ -142,6 +146,8 @@ Express is a back-end web application framework for Nodejs. Instead of writing a
 
 \section{Styling and Bootstrapping}
 We have followed all of the community and industry standards in regards to styling and bootstrapping our application. We have looked in detail to the correct colorways and decided to use 'Blue' as our main color scheme as psychologically it is considered as the worlds favourite color. Colors are an extremely important factor to a websites design especially if it is a social media platform where you want your users to be engaged with the material that they follow and read \cite{singh2011impact}. If the color scheme of the website does not match the website, the conversion rate will begin to decrease as people do not feel as engaged as they would on other platforms that understand the psychology of the user and what the user wants.
+
+We used two external third party libraries to achieve specific Front-End components within the application, these libraries were React Bootstrap and Material UI. Both of these third party libraries can be installed through the node package manager and are out of the box components that do not need cascading style-sheets or any editing. These libraries are extremely useful for a fast implementation of visual components although have many drawbacks as they cannot be styled. Majority of our application has been styled using our own internal cascading style-sheets where each component can have its own class name to determine its style. This way we could design the application to how we wanted it to look and achieve the most user friendly application.
 
 \section{Simplicity}
 From the very beginning of the development process we have always kept simplicity in mind. This way we limited the website to a specific amount of features and functionalities and this also stream lines with the Front-End design of the application. Our website implements each feature without overloading the user with information.
@@ -168,11 +174,11 @@ Although GitHub is a massively open-source website that contains millions of rep
 
 \section{Stack Comparison: MEAN vs MERN}
 
-MEAN vs MERN is a conversation that is becoming increasingly popular in the development community. With social media giant Facebook being the main developers of React, it is no doubt taking over as the main Javascript Library for building user interfaces or UI components. The only real difference of MEAN vs MERN is React vs Angular. So, in a comparitive analysis \cite{aggarwal2018comparative} of MEAN stack vs MERN stack, they compared React and Angular under the following headings: \textit{Performance}, \textit{Architecture}, \textit{Third-Party Libraries}, and \textit{Trends}. 
+MEAN vs MERN is a conversation that is becoming increasingly popular in the development community. The MEAN stack development consists of MongoDB, ExpressJS, AngularJS and NodeJS whereas the MERN stack consists of MongoDB, ExpressJS, ReactJS and NodeJS. With social media giant Facebook being the main developers of React, it is no doubt taking over as the main JavaScript Library for building user interfaces or User Interface components. The only real difference of MEAN vs MERN is React vs Angular. So, in a comparitive analysis \cite{aggarwal2018comparative} of MEAN stack vs MERN stack, they compared React and Angular under the following headings: \textit{Performance}, \textit{Architecture}, \textit{Third-Party Libraries}, and \textit{Trends}. 
 
 \textbf{Performance}
 
-In terms of performance, React is definitely better for performance reasons. Angular implements two way data binding and a digest cycle, this enables synchronization with the underlying data layer. This is extremely costly when hundreds of data items are updated dynamically. React has better state control, where change is detected using a unidirectional flow, and works better when hundreds of thousands of records need to be rendered and updated. React is also easier and more intuitive when handling events.
+In terms of performance, React is definitely better for performance reasons. Angular implements two way data binding and a digest cycle, this enables synchronization with the underlying data layer. This is extremely costly when hundreds of data items are updated dynamically. React has better state control, where change is detected using a unidirectional flow, and works better when hundreds of thousands of records need to be rendered and updated. React is also easier and more intuitive when handling events. Since we have many event handling features within our application this was the best option for us.
 
 \textbf{Architecture}
 
@@ -184,7 +190,7 @@ In comparison to Angular, React needs support from Third-Party libraries to enab
 
 \textbf{Trends}
 
-According to Google Search Trends, Angular was initially in trend up until about 2018, React and Angular were fairly even in terms of popularity. After that though, React has taken over as the more popular frontend design framework. This is seen in figure \ref{fig:React vs Angular}.
+According to Google Search Trends, Angular was initially in trend up until about 2018, React and Angular were fairly even in terms of popularity. After that though, React has taken over as the more popular front-end design framework. This is seen in figure \ref{fig:React vs Angular}.
 
 \begin{figure}[H]
   \centering
@@ -192,6 +198,14 @@ According to Google Search Trends, Angular was initially in trend up until about
   \caption{React vs Angular}
   \label{fig:React vs Angular}
 \end{figure}
+
+This was a strong indicator for us to choose React as it is highly supported online within communities and their are endless amounts of informative resources that we could learn from to help us complete the project.
+
+\item \textbf{Class Components vs Functional Components}
+Class and functional components both hold their strengths and weaknesses. Class components handles state changes whereas functional components are just JavaScript functions that accept props as arguments and they can be reused throughout an application. There are many uses for functional components and they have become increasingly popular within the ReactJS community but we settled on class components as we could utilise its simplicity and robust structure.
+
+All of our JavaScript files have been implemented using class components. The reason as to why we chose Class components instead of Functional components was because we were dealing with many state changes within our application and needed to utilise the support and logic that class components provide. The main differences between the two types of components are their syntax, Class components were the most familiar to us as it has a similar structure to Java.
+
 
 \chapter{System Design}
 
@@ -204,13 +218,8 @@ The structure which we have implemented into our project was by dividing up the 
   \label{fig:Project Github Structure}
 \end{figure}
 
-\item \textbf{Class Components}
 
-All of our JavaScript files have been implemented using class components. The reason as to why we chose Class components instead of Functional components was because we were dealing with many state changes within our application and needed to utilise the support and logic that class components provide. The main differences between the two types of components are their syntax, Class components were the most familiar to us as it has a similar structure to Java.
-
-\newline
-
-\section{Frontend}
+\section{Front-End}
 
 \subsection{Forms}
 Forms within our application have been created in a simple and easy to use manner. Each text field within our forms are easily understood and do not confuse the user on what it is they are filling out. We decided to make our Login and Register pages very clean and simple with not a whole lot of noise or distraction surrounding it. 
