@@ -175,9 +175,44 @@ Although GitHub is a massively open-source website that contains millions of rep
 
 \section{Heroku}
 
+\section{Heroku vs AWS}
+
+Heroku is a platform as a service (PaaS) that allows developers to deploy and host applications in the cloud. It is also one of the first cloud cloud platforms, and has been in development since 2007. The main reason we chose to deploy our application on Heroku was because of the simple nature of the Heroku service. It's extremely easy to configure, and there is an abundance of documentation and Stack Overflow posts relating to it. In comparison to Heroku, AWS is a secure cloud services platform that provides IaaS, PaaS, and SaaS. The configuration and deployment of a service on AWS is quite complicated in comparison. The advantage of AWS is that it can provide much higher computational demands, but as we were only developing for a very small number of users in mind, Heroku fitted our purposes perfectly. Another major factor was that Heroku offers a free deployment service, where you can deploy up to 5 applications at any one time. AWS would also generally require a dedicated DevOps person to manage and maintain the infrastructure, and as we only had three team members, this wasn't feasible. A simple benefit that we found when using Heroku was that it has an automatic deployment feature when connected to a GitHub branch. And so we created a seperate branch on GitHub named \textit{heroku-deployment}, and set up the configuration there. Whenever a new push is made to the branch, Heroku automatically re-builds and re-deploys the application.
+
+In a comparitive analysis of AWS vs Heroku for Growing Startups, they compared the two under cloud hosting services when deploying the same application, with the same region, and a concurrent user amount of 1000. According to the load test results, Heroku dynos had very inconsistent results, as every test produced a different graph.
+Conversely, AWS produced consistent results, responding	to a lot of requests quickly and then more slowly. Heroku slowed down suddenly at large intervals, possibly due to the fact that the Heroku applications run on shared AWS EC2 instances. Heroku had significantly worse response times, with an average latency of 26ms, in stark contrast to AWS' 12ms latency. The network throughput of AWS was also quite a lot higher, with 648kb/s, in comparison to Heroku's 419kb/s\cite{stapper2017analysis}.
+
+Despite these findings, and with AWS clearly being superior in terms of performance to Heroku, the configuration and deployment time of an AWS application took significantly longer than the deployment of a Heroku applcation, which takes minutes, not hours. This is why we went with Heroku, and also because of it's free capabilities.
+
 \section{Stack Comparison: MEAN vs MERN}
 \label{Section:Stack Comparison: MEAN vs MERN}
 MEAN vs MERN is a conversation that is becoming increasingly popular in the development community. The MEAN stack development consists of MongoDB, ExpressJS, AngularJS and NodeJS whereas the MERN stack consists of MongoDB, ExpressJS, ReactJS and NodeJS. With social media giant Facebook being the main developers of React, it is no doubt taking over as the main JavaScript Library for building user interfaces or User Interface components. The only real difference of MEAN vs MERN is React vs Angular. So, in a comparative analysis \cite{aggarwal2018comparative} of MEAN stack vs MERN stack, they compared React and Angular under the following headings: \textit{Performance}, \textit{Architecture}, \textit{Third-Party Libraries}, and \textit{Trends}. 
+
+\textbf{Performance}
+
+In terms of performance, React is definitely better for performance reasons. Angular implements two way data binding and a digest cycle, this enables synchronization with the underlying data layer. This is extremely costly when hundreds of data items are updated dynamically. React has better state control, where change is detected using a unidirectional flow, and works better when hundreds of thousands of records need to be rendered and updated. React is also easier and more intuitive when handling events. Since we have many event handling features within our application this was the best option for us.
+
+\textbf{Architecture}
+
+Comparing the architecture of React and Angular is apples and oranges. React is a JavaScript library that makes UI rendering a breeze. And Angular is a JavaScript framework. As a framework, Angular enforces MVC design, which creates better organized code. And React is more flexible, leaving it to the developer to organize their code, although this may potentially make it harder to maintain.
+
+\textbf{Third-Party Libraries}
+
+In comparison to Angular, React needs support from Third-Party libraries to enable proper functionality. For example, to make HTTP requests, React needs to import the \href{https://github.com/axios/axios}{\textcolor{blue}{Axios}} module. Angular has a built-in HTTP service wrapper that makes HTTP requests a breeze.
+
+\textbf{Trends}
+
+According to Google Search Trends, Angular was initially in trend up until about 2018, React and Angular were fairly even in terms of popularity. After that though, React has taken over as the more popular front-end design framework. This is seen in figure \ref{fig:React vs Angular}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.45]{img/react_vs_angular.jpg}
+  \caption{React vs Angular}
+  \label{fig:React vs Angular}
+\end{figure}
+
+This was a strong indicator for us to choose React as it is highly supported online within communities and their are endless amounts of informative resources that we could learn from to help us complete the project.
+
 
 \section{Agile vs Waterfall }
 
@@ -209,32 +244,6 @@ There are many differences between the two software development methodologies th
 \end{figure}
 
 Waterfall is broken up into the same six stages as agile, these stages consist of Requirements, Analysis, Design, Coding, Testing and Acceptance. Once the requirements have been decided upon at the beginning then you can proceed to the next stage. Analysis is then performed on the requirements to determine the resources that are needed to tackle the project. The projects pseudocode is then written in the next stage so that the programmers know how to complete the project without coming across any design patterns that might stunt the projects progression. The next stage consists of the programmers coding the project based on the previous stages flowcharts and algorithms decided upon. It is important that each stage is correctly implemented and fully decided upon, if the previous stages before coding have failed to achieve their goal then major problems will be faced. Once the code has been complete there needs to be an extensive amount of testing to make sure that the code that has been written works without any bugs. The final stage of the waterfall method is making sure that the Client is satisfied with the final product, in some cases where the client may not be happy with the application you have created for them the entire process must start over and return to the first stage of the methodology. This ensures that extensive meetings with the client before any development stages begin are extremely important to avoid wasting time and resources. \cite{waterfall}
-
-
-\textbf{Performance}
-
-In terms of performance, React is definitely better for performance reasons. Angular implements two way data binding and a digest cycle, this enables synchronization with the underlying data layer. This is extremely costly when hundreds of data items are updated dynamically. React has better state control, where change is detected using a unidirectional flow, and works better when hundreds of thousands of records need to be rendered and updated. React is also easier and more intuitive when handling events. Since we have many event handling features within our application this was the best option for us.
-
-\textbf{Architecture}
-
-Comparing the architecture of React and Angular is apples and oranges. React is a JavaScript library that makes UI rendering a breeze. And Angular is a JavaScript framework. As a framework, Angular enforces MVC design, which creates better organized code. And React is more flexible, leaving it to the developer to organize their code, although this may potentially make it harder to maintain.
-
-\textbf{Third-Party Libraries}
-
-In comparison to Angular, React needs support from Third-Party libraries to enable proper functionality. For example, to make HTTP requests, React needs to import the \href{https://github.com/axios/axios}{\textcolor{blue}{Axios}} module. Angular has a built-in HTTP service wrapper that makes HTTP requests a breeze.
-
-\textbf{Trends}
-
-According to Google Search Trends, Angular was initially in trend up until about 2018, React and Angular were fairly even in terms of popularity. After that though, React has taken over as the more popular front-end design framework. This is seen in figure \ref{fig:React vs Angular}.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.45]{img/react_vs_angular.jpg}
-  \caption{React vs Angular}
-  \label{fig:React vs Angular}
-\end{figure}
-
-This was a strong indicator for us to choose React as it is highly supported online within communities and their are endless amounts of informative resources that we could learn from to help us complete the project.
 
 \item \textbf{Class Components vs Functional Components}
 Class and functional components both hold their strengths and weaknesses. Class components handles state changes whereas functional components are just JavaScript functions that accept props as arguments and they can be reused throughout an application. There are many uses for functional components and they have become increasingly popular within the ReactJS community but we settled on class components as we could utilise its simplicity and robust structure.
