@@ -1,9 +1,9 @@
 %!TEX root = project.tex
 
 \chapter*{About this project}
-\section{Abstract}
+\subsection{Abstract}
 This project is a Social Media platform where you can create communities, post up discussions and follow your friends. Our goal was to create a platform that performs well under stress testing and has very fast loading speeds while handling data through requests.
-This dissertation focuses on the work carried out to design and develop this project over the course of the 20/21 academic year. In detail, we show our development process, testing and the structure we used in developing this website. For this paper, We have researched relevant papers, journals and books related to the software we have used in the implementation of this final year project. The in depth research we have conducted gave us more knowledge of the software used and helped shape our understanding of system design. The development stack we have decided to use is the MERN stack. The MERN stack consists of MongoDB, ExpressJS, ReactJS and NodeJS. By using this stack, it allows us to spread the development process between each member of the team. We chose the Agile Method for our project as it was flexible and suited our project as a couple of changes were made throughout its development. This method gave us the ability to recognize features and requirements and upon this we discussed the approach we would take to tackle the solution. Our testing would not be up to par without the use of Agile as this method provided us with structure and consistency. 
+This dissertation focuses on the work carried out to design and develop this project over the course of the 20/21 academic year. In detail, we show our development process, testing and the structure we used in developing this website. For this paper, We have researched relevant papers, journals and books related to the software we have used in the implementation of this final year project. The in depth research we have conducted gave us more knowledge of the software used and helped shape our understanding of system design. The development stack we have decided to use is the MERN stack. The MERN stack consists of MongoDB, Express.js, React.js and Node.js. By using this stack, it allows us to spread the development process between each member of the team. We chose the Agile Method for our project as it was flexible and suited our project as a couple of changes were made throughout its development. This method gave us the ability to recognize features and requirements and upon this we discussed the approach we would take to tackle the solution. Our testing would not be up to par without the use of Agile as this method provided us with structure and consistency. 
 The main ambition of a social media website it to give a foundation for users to interact with each other. The website must have a low learning curve and be visually appealing. As a team we believe this is demonstrated with our website \textbf{\textit{zoosh}}.
 
 \paragraph{Authors}
@@ -32,17 +32,18 @@ The four main sources of inspiration came from the following websites Reddit, In
 From the research we carried out we held a meeting and brainstormed what our social media website would consist of. A website that users could create groups/societies and discuss topics with each other. Having multiple users engage with our website was the target. For this to be achieved our User Interface needed to be engaging and captivate users. By making our application very user friendly this could result in a daily active user rather than just a once off visit to our website.
 \newline 
 
-As a result of the pandemic and the effect it has had on student life during the college year, clubs and societies became neglected. We found this to be an opportunity to try and make a digital platform for clubs and societies alike. There are universities around Ireland which have their own website for joining clubs and societies but they require an application process which then might result in a club never becoming active. These university websites also do not implement features such as creating posts, comments and reactions. This way we developed a website that does not require an application phase, and anybody can create a club or society online for free and share information as they wish. This would give users a chance to meet new people and engage with societies while not being able to socialise within the college campus, especially for new first years entering into third level institutions.
+With the pandemic and the effect it has had on student life during the college year, clubs and societies became neglected we found this to be an opportunity to try and bring these clubs and societies to a digital format. There are universities around Ireland which have their own website for joining clubs and societies but they require an application process which then might result in a club never becoming active. These university websites also do not implement features such as creating posts, comments and reactions. This way we developed a website that does not require an application phase, and anybody can create a club or society online for free and share information as they wish. This would give users a chance to meet new people and engage with societies while not being able to socialise within the college campus, especially for new first years entering into third level institutions.
 \newline
 
 \section{GitHub URL}
-\href{https://github.com/applied-project-2020}{\textcolor{blue}{https://github.com/applied-project-2020}}
+Project URL : \href{https://github.com/applied-project-2020}{\textcolor{blue}{https://github.com/applied-project-2020}}
+\newline
 GitHub was the obvious version control of choice. The development of the project was organized by the creation of a GitHub organization, of which we were all added as members. This allowed for the creation of multiple repositories to separate different final year project components: Software (\href{https://github.com/applied-project-2020/zoosh}{\textcolor{blue}{Web Application}}, \href{https://github.com/applied-project-2020/mobile-application}{\textcolor{blue}{Mobile Application}}), and \href{https://github.com/applied-project-2020/documentation}{\textcolor{blue}{Dissertation}}.
 
 \begin{itemize}
-    \item \textbf{Web Application}: This repository was the main repository we worked on for the duration of semester one. With over three hundred commits, it's fair to say that we extensively used GitHub to manage our collaborative development, while simultaneously refining our skills with Version Control software, which will definitely aid us in future team based developer roles. This repository containing our MERN stack application named \textit{\textbf{zoosh}} was broken into two main folders: \textit{Client} and \textit{Back-End}. The \textit{Client} folder holds the front end React application, which is served to the user through their browser, and is the application that they interact with. The \textit{Back-End} folder holds the web server, that is run with Node.js which is an asynchronous, event driven JavaScript runtime, used to build scalable network applications that can handle many concurrent connections. The server is used to make requests to the database, which is cloud-hosted at \href{https://cloud.mongodb.com/v2/5e930ffe4cdf590dd97ad867#clusters}{\textcolor{blue}{cloud.mongodb.com}}. The \textit{Back-End} folder also holds all of the necessary database models, routes, etc that are used for the storing of data.
+    \item \textbf{Web Application}: This repository was the main repository we worked on for the duration of semester one. With over three hundred commits, it's fair to say that we extensively used GitHub to manage our collaborative development, while simultaneously refining our skills with Version Control software, which will definitely aid us in future team based developer roles. This repository containing our MERN stack application named \textit{\textbf{zoosh}} was broken into two main folders: \textit{Client} and \textit{Back-End}. The \textit{Client} folder holds the front end React application, which is served to the user through their browser, and is the application that they interact with. The \textit{Back-End} folder holds the web server, that is run with Node.js which is an asynchronous, event driven JavaScript run-time, used to build scalable network applications that can handle many concurrent connections. The server is used to make requests to the database, which is cloud-hosted at \href{https://cloud.mongodb.com/v2/5e930ffe4cdf590dd97ad867#clusters}{\textcolor{blue}{cloud.mongodb.com}}. The \textit{Back-End} folder also holds all of the necessary database models, routes, etc that are used for the storing of data.
     \item \textbf{Documentation}: This repository is used to store the contents of our dissertation. Managing the development of our dissertation was something we discussed for a lengthy period of time. As Overleaf only allows up two collaborators to work on the same LaTex document simultaneously for free, but passed that it requires a monthly subscription to their premium service. Instead of this, we decided to manage the documentation with GitHub, and as such, we created the \textit{Documentation} repository. This is also the ideal way to track the amount that we are each contributing to the documentation.
-    \item \textbf{Mobile Application}: This repository is used to hold the mobile application version of our \textit{\textbf{zoosh}} app. Although it hasn't been kept as up-to-date as our web application, it was still an interesting application to develop. The mobile version was created using React Native, which isn't that different structurally from ReactJS, only requiring a couple of tweaks to our code. Developing the mobile application was purely for concept and researching the potential of porting the website to mobile, the database can be easily shared between the two as MongoDB allows you to sync the database from MongoDB Atlas to MongoDB Realm. This allows for a fast deployment of a mobile application as the only features that would need to be worked on would be the user interface design and some standard mobile application libraries such as notifications and touch gestures.
+    \item \textbf{Mobile Application}: This repository is used to hold the mobile application version of our \textit{\textbf{zoosh}} app. Although it hasn't been kept as up-to-date as our web application, it was still an interesting application to develop. The mobile version was created using React Native, which isn't that different structurally from React.js, only requiring a couple of tweaks to our code. Developing the mobile application was purely for concept and researching the potential of porting the website to mobile, the database can be easily shared between the two as MongoDB allows you to sync the database from MongoDB Atlas to MongoDB Realm. This allows for a fast deployment of a mobile application as the only features that would need to be worked on would be the user interface design and some standard mobile application libraries such as notifications and touch gestures.
 \end{itemize}
 
 
@@ -54,11 +55,9 @@ All of the development processes will be discussed throughout the document as fo
 \begin{itemize}
 \item Introduction - This will run down through the team members and the reason as to why we chose this project.
 
-\item Context. (Current)
-
 \item Methodology - This chapter will discuss the steps we took to develop the project and the testing which we carried out along the way.
 
-\item Technology Review - This is where we run down through the development stack that we chose and why we chose it. 
+\item Technology Review - This is where we run down through the development stack that we chose and why we chose it and also discuss alternatives to the decisions that we made. 
 
 \item System Design - This chapter discusses the design decisions that we chose and the implementation of all our components.
 
@@ -74,11 +73,11 @@ All of the development processes will be discussed throughout the document as fo
 \subsection{Agile Methodology}
 For the development of this application, we decided the best approach to take was to use Agile. Agile is considered the modern methodology for software development due to its flexibility. Agile is a methodology focused around iterative development and by using this method requires a team to work collaboratively and consistently. Agile is more suited to developing web applications as it encourages greater collaboration flexibility. We chose Agile over the Waterfall model as it was not suitable for the application we were developing and proved to be too rigid. Before we started any development it was important to have a clear plan of what the features we wanted to incorporate and develop. Living in the same house proved useful in these times as we were able to have in-person meetings. Our first meeting we drew up a plan of how we were going to develop this application. Our first aim of was to agree on a development stack. After research into numerous development stacks such as the MEAN stack and MERN stack we decided on the MERN stack. We carried out extensive research into the factors that are common to all great websites, such as:
 
-\item \textbf{Functional} - Probably the most important aspect of every website. It must work quickly and as expected. Page loading times must be kept as low as possible, especially when working with large amounts of data - this was a big issue that we encountered when dealing with images.
-\item \textbf{Easy to Use} - User Experience (UX) plays a key role in helping visitors use, understand, and continue to use an application. If an application is difficult to use/understand, you can guarantee that a user won't stay longer than a few seconds. We made sure that the design we had created was user friendly and carried out blocks of black box testing to ensure that there was no confusion when using the website. Any feedback that we were given on positioning of components and the fluidity of the features we tweaked so that the design would relate to a lot of people and required no learning curve as navigating around the website was familiar.
+\item \textbf{Functional} - Probably the most important aspect of every website. It must work have a fast response time and function as expected. Page loading times must be kept as low as possible, especially when working with large amounts of data - this was a big issue that we encountered when dealing with images.
+\item \textbf{Easy to Use} - User Experience (UX) plays a key role in helping visitors use, understand, and continue to use an application. If an application is difficult to use or understand, you can guarantee that a user won't stay longer than a few seconds. We made sure that the design we had created was user friendly and carried out blocks of black box testing to ensure that there was no confusion when using the website. Any feedback that we were given on positioning of components and the fluidity of the features we tweaked so that the design would relate to a lot of people and required no learning curve as navigating around the website was familiar.
 \item \textbf{Robustness} - The application should work when used on different devices, the page should automatically resize and adjust when used on different sized screens.
 
-With our choice of stack agreed upon, the next step was dividing the roles in the group. Conor and Thomas have an interest in back-end development and Aaron was keen on developing the Front-end. The first meeting was beneficial as we had a concrete foundation to build upon. \newline
+With our choice of stack agreed upon, the next step was dividing the roles in the group. Conor and Thomas have an interest in back-end development and Aaron was keen on developing the front-end. The first meeting was beneficial as we had a concrete foundation to build upon. \newline
 We decided the best approach to development was to work on two - three features a week. We set up a whiteboard with a list of features to be developed, every week we would divide the features between the three of us. An example of our work process is shown below.
 \begin{center}
   \includegraphics[scale=0.09]{img/whiteboard.jpg}
@@ -101,7 +100,7 @@ We carried out smoke testing once a major feature was added. One of these tests 
 
 \item \textbf{Regression Testing}
  is used to ensure that no recent changes have altered previously working features.\newline
-Regression testing was carried out by the entire group before we pushed to Github. If a member of the team was developing a feature, before this feature was to be implemented they would be required to carry out a test to ensure this feature did not alter a preexisting component. Regression testing resulted in our application being more efficient.
+Regression testing was carried out by the entire group before we pushed to GitHub. If a member of the team was developing a feature, before this feature was to be implemented they would be required to carry out a test to ensure this feature did not alter a preexisting component. Regression testing resulted in our application being more efficient.
 
 \item \textbf{Stress Testing}
  is used to determine the stability of an application by testing beyond normal operational capacity.\newline
@@ -112,15 +111,7 @@ Stress testing was vital in the development of our application to ensure our app
  We carried out this testing by allowing our friends to demo the website. This test was crucial to understand if our website was up to standard of other social media platforms. From this testing phase we learned more about how our website behaves under control of end users. In doing so we were able to adjust and tweak minor details to ensure our website met a high standard.
 
 \end{itemize}
-\newpage
-\subsection{Test Plan}
-These are the features we wrote up on our test plan. 
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.8]{img/Features_Tested.PNG}
-  \label{fig:FeaturesTested}
-\end{figure}
-A link to our test plan can be found here. \href{https://github.com/applied-project-2020/documentation/blob/main/Test-Plan.xlsx}{\textcolor{blue}{Link to Test Plan}}
+
 
 \chapter{Technology Review}
 
@@ -129,16 +120,16 @@ The development stack that we chose for this project was the M.E.R.N stack. This
 
 \section{ReactJS}
 React has become a leading member of the JavaScript libraries which are extremely popular today. The main uses of React are to allow developers to created a large scale application in a fast, scalable and simple way. React is considered one of the easiest JavaScript libraries to learn as to start developing you only need basic knowledge of HTML and CSS, there are no limits when it comes to React as they are constantly updating their library and exploring new techniques for developers to utilise. 
-React uses a virtual DOM, this is similar to the browser DOM but it is stored in memory. When the render method gets called changes are made to the virtual DOM first. A diff() algorithm is used to compare the changes and updates. If there are changes they are only shown in the browser DOM, this makes Reacts performance second to none \cite{aggarwal2018modern}. Comparing this to AngularJS which uses a regular DOM the performance of React is greater than Angular because of the virtual DOM \cite{kumar2016comparative}
+React uses a virtual DOM, this is similar to the browser DOM but it is stored in memory. When the render method gets called changes are made to the virtual DOM first. A diff() algorithm is used to compare the changes and updates. If there are changes they are only shown in the browser DOM, this makes Reacts performance second to none \cite{aggarwal2018modern}. Comparing this to Angular.js which uses a regular DOM the performance of React is greater than Angular because of the virtual DOM \cite{kumar2016comparative}
 React was the obvious choice for us as it suited the needs of our application. The learning curve for React is low compared to others like Angular. We carried out extensive research into MEAN vs MERN stack which can be viewed here \pageref{Section:Stack Comparison: MEAN vs MERN} 
 \newline
 
 \section{NodeJS}
-Using NodeJS has many benefits within web and mobile development, some of the main advantages of Node are its high performance, its extremely scalable, its easy to learn and implement and has a large community to provide help and guidance for any issues you may be facing. NodeJS has been extremely important in the functionality of our website as it handles all of our server-side functionality, without this our website would not function as no data would be loaded in and users would not be able to access the website. Node performs all of our Create, Open, Read, Delete and Update functionality and handles all of our form data and passes it to the correct collections within our MongoDB database. 
+Using Node.js has many benefits within web and mobile development, some of the main advantages of Node are its high performance, its extremely scalable, its easy to learn and implement and has a large community to provide help and guidance for any issues you may be facing. Node.js has been extremely important in the functionality of our website as it handles all of our server-side functionality, without this our website would not function as no data would be loaded in and users would not be able to access the website. Node performs all of our Create, Open, Read, Delete and Update functionality and handles all of our form data and passes it to the correct collections within our MongoDB database. 
 
-Reasons as to why we chose Node are because they have become a big player within the web application industry. Major companies such as Uber, Netflix and PayPal all implement NodeJS into their applications as it has increased their performance and simplifies Back-End programming \cite{NetflixNodeJS}. This gave us enough confidence to choose NodeJS to handle our server-side environments. 
+Reasons as to why we chose Node are because they have become a big player within the web application industry. Major companies such as Uber, Netflix and PayPal all implement Node.js into their applications as it has increased their performance and simplifies back-end programming \cite{netflixnode}. This gave us enough confidence to choose Node.js to handle our server-side environments. 
 
-NodeJS also provides developers with its own package manager knows as 'npm'. This is the most common and most popular package manager used for web and mobile application development as it allows you to install third party libraries to speed up and help with the development process. We have utilised the node package manager within our project for many of features and functionalities, through this we were able to install third party libraries such as React Bootstrap for Front-End design and Bcrypt which is a password hashing function to keep our users passwords secure.
+Node.js also provides developers with its own package manager knows as 'npm'. This is the most common and most popular package manager used for web and mobile application development as it allows you to install third party libraries to speed up and help with the development process. We have utilised the node package manager within our project for many of features and functionalities, through this we were able to install third party libraries such as React Bootstrap for front-end design and Bcrypt which is a password hashing function to keep our users passwords secure.
 
 \begin{figure}[H]
   \centering
@@ -153,27 +144,27 @@ With our website holding numerous object arrays MongoDB's json format was perfec
 Having a flexible schema provided us with the opportunity to swap and change names and values in a short space of time if necessary. Throughout our development process we added, removed and changed collections in our database, using a NoSQL database made this efficient to do.
 
 \section{Express}
-Express is a back-end web application framework for Nodejs. Instead of writing a full web server by hand on Node, developers use Express to greatly simplify the creation of a web server. There’s no need to continuously repeat the same code, as you would with the Node.js HTTP module.
+Express is a back-end web application framework for Node.js. Instead of writing a full web server by hand on Node, developers use Express to greatly simplify the creation of a web server. There’s no need to continuously repeat the same code, as you would with the Node.js HTTP module.
 
 \section{Styling and Bootstrap}
-We have followed all of the community and industry standards in regards to styling and bootstrapping our application. Bootstrap is the most popular CSS framework which allows you to create responsive and mobile first websites.Bootstrap allows you to create nice website designs in a timely manner. Its responsive CSS allows developers to create Front-End components which will resize themselves on many devices such as Mobile, Tablet, Laptop and Desktop. We have looked in detail to the correct colorways and decided to use 'Blue' as our main color scheme as psychologically it is considered as the worlds favourite color. Colors are an extremely important factor to a websites design especially if it is a social media platform where you want your users to be engaged with the material that they follow and read \cite{singh2011impact}. If the color scheme of the website does not match the website, the conversion rate will begin to decrease as people do not feel as engaged as they would on other platforms that understand the psychology of the user and what the user wants.
+We have followed all of the community and industry standards in regards to styling and bootstrapping our application. Bootstrap is the most popular CSS framework which allows you to create responsive and mobile first websites.Bootstrap allows you to create nice website designs in a timely manner. Its responsive CSS allows developers to create front-end components which will resize themselves on many devices such as Mobile, Tablet, Laptop and Desktop. We have looked in detail to the correct colorways and decided to use 'Blue' as our main color scheme as psychologically it is considered as the worlds favourite color. Colors are an extremely important factor to a websites design especially if it is a social media platform where you want your users to be engaged with the material that they follow and read \cite{singh2011impact}. If the color scheme of the website does not match the website, the conversion rate will begin to decrease as people do not feel as engaged as they would on other platforms that understand the psychology of the user and what the user wants.
 
-We used two external third party libraries to achieve specific Front-End components within the application, these libraries were React Bootstrap and Material UI. Both of these third party libraries can be installed through the node package manager and are out of the box components that do not need cascading style-sheets or any editing. These libraries are extremely useful for a fast implementation of visual components although have many drawbacks as they cannot be styled. Majority of our application has been styled using our own internal cascading style-sheets where each component can have its own class name to determine its style. This way we could design the application to how we wanted it to look and achieve the most user friendly application.
+We used two external third party libraries to achieve specific front-end components within the application, these libraries were React Bootstrap and Material UI. Both of these third party libraries can be installed through the node package manager and are out of the box components that do not need cascading style-sheets or any editing. These libraries are extremely useful for a fast implementation of visual components although have many drawbacks as they cannot be styled. Majority of our application has been styled using our own internal cascading style-sheets where each component can have its own class name to determine its style. This way we could design the application to how we wanted it to look and achieve the most user friendly application.
 
 \section{Simplicity}
-From the very beginning of the development process we have always kept simplicity in mind. This way we limited the website to a specific amount of features and functionalities and this also stream lines with the Front-End design of the application. Our website implements each feature without overloading the user with information.
+From the very beginning of the development process we have always kept simplicity in mind. This way we limited the website to a specific amount of features and functionalities and this also stream lines with the front-end design of the application. Our website implements each feature without overloading the user with information.
 
 \section{Docker}
 
-Docker is a powerful tool that allows for many different advantages when deploying software. We utilized Docker later on in our development when we realized our GitHub instructions for installing and running the project were getting rather complicated. As the user had to navigate through multiple directories, and run npm install in frontend and backend folders, along with running both the client and server on two command prompt instances. After research, we found that the containerization of the application was the best route to follow, as this creates:
+Docker is a powerful tool that allows for many different advantages when deploying software. We utilized Docker later on in our development when we realized our GitHub instructions for installing and running the project were getting rather complicated. As the user had to navigate through multiple directories, and run npm install in front-end and back-end folders, along with running both the client and server on two command prompt instances. After research, we found that the containerization of the application was the best route to follow, as this creates:
 \begin{itemize}
     \item Consistency - A consistent, isolated environment. Everything remains the same regardless of where the app is deployed, resulting in massive productivity: less time debugging and more time launching new features and functionality for users.
-    \item Mobility - The ability to be deployed anywhere, free of development environment limitations. \item Simplicity - The creation of two Dockerfiles for both frontend and backend allowed for a docker-compose.yml file that runs both Dockerfiles simultaneously, which installs all of the necessary dependencies for the user, and then subsequently runs the client and server all in the one command prompt.
+    \item Mobility - The ability to be deployed anywhere, free of development environment limitations. \item Simplicity - The creation of two Dockerfiles for both front-end and back-end allowed for a docker-compose.yml file that runs both Dockerfiles simultaneously, which installs all of the necessary dependencies for the user, and then subsequently runs the client and server all in the one command prompt.
 \end{itemize}
 
-It is of utmost importance that Docker is performant, as server virtualization is broadly used in IT enterprises. Virtualization allows for the running of different services of operating systems on the cloud. To be able to host microservice applications, which consists of different operations performed by smaller individual deployed services, a low-overhead virtualization technology is needed. Docker fills in this void, as it is lightweight and performant, not to mention open-source technology. A performance evaluation performed by Amit M Potdar et al, compared multiple facets of testing to evaluate the performance of Docker vs a Virtual Machine (VM). One such test was the \textit{Maximum Prime Number Operation}, which determines the time taken to calculate the maximum prime number. The maximum prime number was taken to be 50'000. Using 4 thread operations, the VM calculated the prime number in about 37 seconds. Comparatively, the Docker machine completed the operation in just under 20 seconds. This was due to the hypervisor in the virtual machine. This wasn't the only area tested, however, as both machine were compared with \textit{zip-compression tests}, \textit{memory performance}, \textit{disk i/o performance}, \textit{load testing}, and more. Out of all of the tests, Docker performed significantly better than the virtual machine, with some tests Docker performing more than twice as fast, if not more than the VM\cite{POTDAR20201419}.
+It is of utmost importance that Docker is performant, as server virtualization is broadly used in IT enterprises. Virtualization allows for the running of different services of operating systems on the cloud. To be able to host micro service applications, which consists of different operations performed by smaller individual deployed services, a low-overhead virtualization technology is needed. Docker fills in this void, as it is lightweight and performant, not to mention open-source technology. A performance evaluation performed by Amit M Potdar et al, compared multiple facets of testing to evaluate the performance of Docker vs a Virtual Machine (VM). One such test was the \textit{Maximum Prime Number Operation}, which determines the time taken to calculate the maximum prime number. The maximum prime number was taken to be 50'000. Using 4 thread operations, the VM calculated the prime number in about 37 seconds. Comparatively, the Docker machine completed the operation in just under 20 seconds. This was due to the hypervisor in the virtual machine. This wasn't the only area tested, however, as both machine were compared with \textit{zip-compression tests}, \textit{memory performance}, \textit{disk i/o performance}, \textit{load testing}, and more. Out of all of the tests, Docker performed significantly better than the virtual machine, with some tests Docker performing more than twice as fast, if not more than the VM\cite{POTDAR20201419}.
 
-\section{Github}
+\section{GitHub}
 
 GitHub is an extremely useful tool when working in a collaborative environment. GitHub is a version control system, that automatically handles the merging of multiple local code bases into one cloud version of the code. GitHub shows you the exact differences and changes that were made by each person collaborating on the repository, which is what makes it so useful for tracking the input of each and every team member. Containing millions of repositories, GitHub has grown massively in popularity within the development community. This has also led to some issues, a software engineering conference held in India highlighted that, as open source contributions increase greatly, which are in the form of issues that report bugs or adding additional features, this leads to an increasing challenge for integrators, as the number of concurrent issues reported by developers as users greatly exceeds the amount that the number of core contributors can handle\cite{github_issues}. In our own final year project, we initially created a \href{https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations}{\textcolor{blue}{GitHub Organization}}, which allowed us to have multiple repositories, for each aspect of the final year project.
 
@@ -183,44 +174,9 @@ Although GitHub is a massively open-source website that contains millions of rep
 
 \section{Heroku}
 
-\section{Heroku vs AWS}
-
-Heroku is a platform as a service (PaaS) that allows developers to deploy and host applications in the cloud. It is also one of the first cloud cloud platforms, and has been in development since 2007. The main reason we chose to deploy our application on Heroku was because of the simple nature of the Heroku service. It's extremely easy to configure, and there is an abundance of documentation and Stack Overflow posts relating to it. In comparison to Heroku, AWS is a secure cloud services platform that provides IaaS, PaaS, and SaaS. The configuration and deployment of a service on AWS is quite complicated in comparison. The advantage of AWS is that it can provide much higher computational demands, but as we were only developing for a very small number of users in mind, Heroku fitted our purposes perfectly. Another major factor was that Heroku offers a free deployment service, where you can deploy up to 5 applications at any one time. AWS would also generally require a dedicated DevOps person to manage and maintain the infrastructure, and as we only had three team members, this wasn't feasible. A simple benefit that we found when using Heroku was that it has an automatic deployment feature when connected to a GitHub branch. And so we created a seperate branch on GitHub named \textit{heroku-deployment}, and set up the configuration there. Whenever a new push is made to the branch, Heroku automatically re-builds and re-deploys the application.
-
-In a comparitive analysis of AWS vs Heroku for Growing Startups, they compared the two under cloud hosting services when deploying the same application, with the same region, and a concurrent user amount of 1000. According to the load test results, Heroku dynos had very inconsistent results, as every test produced a different graph.
-Conversely, AWS produced consistent results, responding	to a lot of requests quickly and then more slowly. Heroku slowed down suddenly at large intervals, possibly due to the fact that the Heroku applications run on shared AWS EC2 instances. Heroku had significantly worse response times, with an average latency of 26ms, in stark contrast to AWS' 12ms latency. The network throughput of AWS was also quite a lot higher, with 648kb/s, in comparison to Heroku's 419kb/s\cite{stapper2017analysis}.
-
-Despite these findings, and with AWS clearly being superior in terms of performance to Heroku, the configuration and deployment time of an AWS application took significantly longer than the deployment of a Heroku applcation, which takes minutes, not hours. This is why we went with Heroku, and also because of it's free capabilities.
-
 \section{Stack Comparison: MEAN vs MERN}
 \label{Section:Stack Comparison: MEAN vs MERN}
-MEAN vs MERN is a conversation that is becoming increasingly popular in the development community. The MEAN stack development consists of MongoDB, ExpressJS, AngularJS and NodeJS whereas the MERN stack consists of MongoDB, ExpressJS, ReactJS and NodeJS. With social media giant Facebook being the main developers of React, it is no doubt taking over as the main JavaScript Library for building user interfaces or User Interface components. The only real difference of MEAN vs MERN is React vs Angular. So, in a comparative analysis \cite{aggarwal2018comparative} of MEAN stack vs MERN stack, they compared React and Angular under the following headings: \textit{Performance}, \textit{Architecture}, \textit{Third-Party Libraries}, and \textit{Trends}. 
-
-\textbf{Performance}
-
-In terms of performance, React is definitely better for performance reasons. Angular implements two way data binding and a digest cycle, this enables synchronization with the underlying data layer. This is extremely costly when hundreds of data items are updated dynamically. React has better state control, where change is detected using a unidirectional flow, and works better when hundreds of thousands of records need to be rendered and updated. React is also easier and more intuitive when handling events. Since we have many event handling features within our application this was the best option for us.
-
-\textbf{Architecture}
-
-Comparing the architecture of React and Angular is apples and oranges. React is a JavaScript library that makes UI rendering a breeze. And Angular is a JavaScript framework. As a framework, Angular enforces MVC design, which creates better organized code. And React is more flexible, leaving it to the developer to organize their code, although this may potentially make it harder to maintain.
-
-\textbf{Third-Party Libraries}
-
-In comparison to Angular, React needs support from Third-Party libraries to enable proper functionality. For example, to make HTTP requests, React needs to import the \href{https://github.com/axios/axios}{\textcolor{blue}{Axios}} module. Angular has a built-in HTTP service wrapper that makes HTTP requests a breeze.
-
-\textbf{Trends}
-
-According to Google Search Trends, Angular was initially in trend up until about 2018, React and Angular were fairly even in terms of popularity. After that though, React has taken over as the more popular front-end design framework. This is seen in figure \ref{fig:React vs Angular}.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.45]{img/react_vs_angular.jpg}
-  \caption{React vs Angular}
-  \label{fig:React vs Angular}
-\end{figure}
-
-This was a strong indicator for us to choose React as it is highly supported online within communities and their are endless amounts of informative resources that we could learn from to help us complete the project.
-
+MEAN vs MERN is a conversation that is becoming increasingly popular in the development community. The MEAN stack development consists of MongoDB, Express.js, Angular.js and Node.js whereas the MERN stack consists of MongoDB, Express.js, React.js and Node.js. With social media giant Facebook being the main developers of React, it is no doubt taking over as the main JavaScript Library for building user interfaces or User Interface components. The only real difference of MEAN vs MERN is React vs Angular. So, in a comparative analysis \cite{aggarwal2018comparative} of MEAN stack vs MERN stack, they compared React and Angular under the following headings: \textit{Performance}, \textit{Architecture}, \textit{Third-Party Libraries}, and \textit{Trends}. 
 
 \section{Agile vs Waterfall }
 
@@ -253,21 +209,47 @@ There are many differences between the two software development methodologies th
 
 Waterfall is broken up into the same six stages as agile, these stages consist of Requirements, Analysis, Design, Coding, Testing and Acceptance. Once the requirements have been decided upon at the beginning then you can proceed to the next stage. Analysis is then performed on the requirements to determine the resources that are needed to tackle the project. The projects pseudocode is then written in the next stage so that the programmers know how to complete the project without coming across any design patterns that might stunt the projects progression. The next stage consists of the programmers coding the project based on the previous stages flowcharts and algorithms decided upon. It is important that each stage is correctly implemented and fully decided upon, if the previous stages before coding have failed to achieve their goal then major problems will be faced. Once the code has been complete there needs to be an extensive amount of testing to make sure that the code that has been written works without any bugs. The final stage of the waterfall method is making sure that the Client is satisfied with the final product, in some cases where the client may not be happy with the application you have created for them the entire process must start over and return to the first stage of the methodology. This ensures that extensive meetings with the client before any development stages begin are extremely important to avoid wasting time and resources. \cite{waterfall}
 
+
+\textbf{Performance}
+
+In terms of performance, React is definitely better for performance reasons. Angular implements two way data binding and a digest cycle, this enables synchronization with the underlying data layer. This is extremely costly when hundreds of data items are updated dynamically. React has better state control, where change is detected using a unidirectional flow, and works better when hundreds of thousands of records need to be rendered and updated. React is also easier and more intuitive when handling events. Since we have many event handling features within our application this was the best option for us.
+
+\textbf{Architecture}
+
+Comparing the architecture of React and Angular is apples and oranges. React is a JavaScript library that makes UI rendering a breeze. And Angular is a JavaScript framework. As a framework, Angular enforces MVC design, which creates better organized code. And React is more flexible, leaving it to the developer to organize their code, although this may potentially make it harder to maintain.
+
+\textbf{Third-Party Libraries}
+
+In comparison to Angular, React needs support from Third-Party libraries to enable proper functionality. For example, to make HTTP requests, React needs to import the \href{https://github.com/axios/axios}{\textcolor{blue}{Axios}} module. Angular has a built-in HTTP service wrapper that makes HTTP requests a breeze.
+
+\textbf{Trends}
+
+According to Google Search Trends, Angular was initially in trend up until about 2018, React and Angular were fairly even in terms of popularity. After that though, React has taken over as the more popular front-end design framework. This is seen in figure \ref{fig:React vs Angular}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.45]{img/react_vs_angular.jpg}
+  \caption{React vs Angular}
+  \label{fig:React vs Angular}
+\end{figure}
+
+This was a strong indicator for us to choose React as it is highly supported online within communities and their are endless amounts of informative resources that we could learn from to help us complete the project.
+
 \item \textbf{Class Components vs Functional Components}
-Class and functional components both hold their strengths and weaknesses. Class components handles state changes whereas functional components are just JavaScript functions that accept props as arguments and they can be reused throughout an application. There are many uses for functional components and they have become increasingly popular within the ReactJS community but we settled on class components as we could utilise its simplicity and robust structure.
+Class and functional components both hold their strengths and weaknesses. Class components handles state changes whereas functional components are just JavaScript functions that accept props as arguments and they can be reused throughout an application. There are many uses for functional components and they have become increasingly popular within the React.js community but we settled on class components as we could utilise its simplicity and robust structure.
 
 All of our JavaScript files have been implemented using class components. The reason as to why we chose Class components instead of Functional components was because we were dealing with many state changes within our application and needed to utilise the support and logic that class components provide. The main differences between the two types of components are their syntax, Class components were the most familiar to us as it has a similar structure to Java.
 
 
 \chapter{System Design}
 
-The structure which we have implemented into our project was by dividing up the Back-End and Client (containing Front-End components) into separate folders. This way we could easily distinguish which areas we were working on as both folders contain a large amount of scripts which relate to their desired areas. We decided to structure our project this way as from our research this seemed to be the most standard and mainstream structure that is being used within the industry. Inside of each folder the command 'npm install' must be used to install all the project dependencies, previously we had the Server and Client combined together within the same folder. This proved to be quite messy and meant the amount of dependencies being installed at the same time would slow down the process of development. By dividing them into separate folders it meant the members working on Back-End content did not need to install dependencies which were being used by the members working on the Front-End components.
+The structure which we have implemented into our project was by dividing up the back-end and Client (containing front-end components) into separate folders. This way we could easily distinguish which areas we were working on as both folders contain a large amount of scripts which relate to their desired areas. We decided to structure our project this way as from our research this seemed to be the most standard and mainstream structure that is being used within the industry. Inside of each folder the command 'npm install' must be used to install all the project dependencies, previously we had the Server and Client combined together within the same folder. This proved to be quite messy and meant the amount of dependencies being installed at the same time would slow down the process of development. By dividing them into separate folders it meant the members working on back-end content did not need to install dependencies which were being used by the members working on the front-end components.
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.65]{img/structure.PNG}
-  \caption{Project Github Structure}
-  \label{fig:Project Github Structure}
+  \caption{Project GitHub Structure}
+  \label{fig:Project GitHub Structure}
 \end{figure}
 
 
@@ -278,7 +260,7 @@ Forms within our application have been created in a simple and easy to use manne
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.45]{img/login.PNG}
+  \includegraphics[scale=0.45]{img/login2.png}
   \label{fig:Login Screen}
 \end{figure}
 
@@ -288,6 +270,7 @@ Forms within our application have been created in a simple and easy to use manne
   \label{fig:Join Screen}
 \end{figure}
 
+\newpage
 \textbf{Edit Profile Form}
 \newline
 When a user has navigated to their account they will be able to edit their profile, the editing options have been limited to Name, Bio, Profile Picture and Password. This form is simple and clean with no confusing aspects within the user interface.
@@ -346,13 +329,13 @@ The feeds are divided into two sections, the default section is to display the p
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.35]{img/following.PNG}
+  \includegraphics[scale=0.30]{img/screen2.PNG}
   \label{fig:Following Feed.}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.35]{img/top.PNG}
+  \includegraphics[scale=0.30]{img/screen1.PNG}
   \label{fig:Top Posts Feed.}
 \end{figure}
 
@@ -432,7 +415,7 @@ The follow/unfollow was a feature we felt at the start we needed. All social med
   \label{fig:OtherProfile}
 \end{figure}
 
-\section{Backend}
+\section{Back End}
 
 \subsection{Retrieving Data}
 
@@ -567,11 +550,18 @@ However, this wasn't the entire issue. Although the performance was better than 
 
 \section{Wire Framing Designs}
 
-Throughout the development of this project we tried out many different User Interfaces and Front-End designs to try and find which was the most suitable layout for our project. We used software such as Figma and Wire framing to design and test our designs which we could implement. Wireframing the designs is extremely important as they clarify the websites features and functionalities. By creating wireframes this will flatten out the design of the user interface so that the team members working on the Front-End understand what it is that needs to be made and what layout they need to create. Figma is a browser based User Interface and User Experience platform that allows you to create and prototype designs within minutes \cite{figma}. Once we had three official designs we came to a conclusion on which one would be most suitable for our project to match its features. The design has taken inspiration from existing social media platforms and has been tweaked to suit the websites functions. 
+Throughout the development of this project we tried out many different User Interfaces and front-end designs to try and find which was the most suitable layout for our project. We used software such as Figma and Wire framing to design and test our designs which we could implement. Wireframing the designs is extremely important as they clarify the websites features and functionalities. By creating wireframes this will flatten out the design of the user interface so that the team members working on the front-end understand what it is that needs to be made and what layout they need to create. Figma is a browser based User Interface and User Experience platform that allows you to create and prototype designs within minutes \cite{figma}. Once we had three official designs we came to a conclusion on which one would be most suitable for our project to match its features. The design has taken inspiration from existing social media platforms and has been tweaked to suit the websites functions. 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.4]{img/FIGMA.PNG}
+  \includegraphics[scale=0.25]{img/FIGMA.PNG}
+  \caption{Figma Design.}
+  \label{fig:Mock Figma design.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{img/FIGMA2.PNG}
   \caption{Figma Design.}
   \label{fig:Final Figma design.}
 \end{figure}
@@ -583,7 +573,7 @@ Overall we have achieved our goal of developing an application where users could
 Working on this project was an enjoyable experience as we got to work on an application which we all had fun developing. From the very beginning when we were first capable of communicating through the website rather than any other platform it made us really want to improve the functionality and fluidity of the website. We could all communicate by posting on the feed in real time and comment under each others posts on bugs or issues we were facing. It was also exciting to see this website come to flourish step by step. Week by week as new features are implemented it would be intriguing to see all these features become linked together. Getting the chance to work on an exciting project within a team meant that we were always learning together and constantly challenging ourselves to produce a better website by keeping our standards high.
 
 \section{What we learned}
-This was valuable experience as we got a sense of working in a professional environment. Working as a team to produce this project has helped us to develop and improve on our team working skills and problem solving skills. Looking back at our tracked progress through GitHub we feel the consistency and team work was there, with over 330 commits during the course of the academic year. Through the development process we increased our ability to carry out extensive research, we used resources such as ReactJS documentation, MongoDB documentation, Stackoverflow, Reddit and YouTube to learn techniques and learn from experts in the industry about ways to tackle problems we may be facing. This was showcased in the beginning when we were looking at other websites. It was important we didn't blatantly copy another website but take inspiration from. This process of research helped our ability of critically thinking into design features and functionality. 
+This was valuable experience as we got a sense of working in a professional environment. Working as a team to produce this project has helped us to develop and improve on our team working skills and problem solving skills. Looking back at our tracked progress through GitHub we feel the consistency and team work was there, with over 330 commits during the course of the academic year. Through the development process we increased our ability to carry out extensive research, we used resources such as React.js documentation, MongoDB documentation, Stackoverflow, Reddit and YouTube to learn techniques and learn from experts in the industry about ways to tackle problems we may be facing. This was showcased in the beginning when we were looking at other websites. It was important we didn't blatantly copy another website but take inspiration from. This process of research helped our ability of critically thinking into design features and functionality. 
 Testing was another learning experience as we would always complete one features functionality which then led to another feature breaking. It was important that we maintained our process of testing throughout this project to end with a efficient website. This was something we got better at through the development process, at the start we didn't test as much as we would of liked to but with more bugs developing our testing became crucial. This is something we have really taken into consideration for future projects and to thoroughly test features throughout and after development and to not make too many changes within a single commit through GitHub.
 The experience we have gained using Agile methodologies gave us the confidence that when we work for a company we will have the necessary thought process of working in a professional environment. 
 
@@ -605,4 +595,4 @@ We were also presented with unexpected challenges whether it be data not pushing
 \newline
 Ultimately, we are happy with the outcome and final version of the website and are grateful for the knowledge and experience we have gained. We would also like to thank our mentor Kevin 0'Brien for supporting us along the way if we had any issues.
 
-\chapter{References}
+\cite{githublink}
