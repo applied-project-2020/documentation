@@ -67,11 +67,10 @@ All of the development processes will be discussed throughout the document as fo
 \end{itemize}
 
 \chapter{Methodology}
-\begin{itemize}
-\item 
 
 \subsection{Agile Methodology}
 For the development of this application, we decided the best approach to take was to use Agile. Agile is considered the modern methodology for software development due to its flexibility. Agile is a methodology focused around iterative development and by using this method requires a team to work collaboratively and consistently. Agile is more suited to developing web applications as it encourages greater collaboration flexibility. We chose Agile over the Waterfall model as it was not suitable for the application we were developing and proved to be too rigid. Before we started any development it was important to have a clear plan of what the features we wanted to incorporate and develop. Living in the same house proved useful in these times as we were able to have in-person meetings. Our first meeting we drew up a plan of how we were going to develop this application. Our first aim of was to agree on a development stack. After research into numerous development stacks such as the MEAN stack and MERN stack we decided on the MERN stack. We carried out extensive research into the factors that are common to all great websites, such as:
+\begin{itemize}
 
 \item \textbf{Functional} - Probably the most important aspect of every website. It must work have a fast response time and function as expected. Page loading times must be kept as low as possible, especially when working with large amounts of data - this was a big issue that we encountered when dealing with images.
 \item \textbf{Easy to Use} - User Experience (UX) plays a key role in helping visitors use, understand, and continue to use an application. If an application is difficult to use or understand, you can guarantee that a user won't stay longer than a few seconds. We made sure that the design we had created was user friendly and carried out blocks of black box testing to ensure that there was no confusion when using the website. Any feedback that we were given on positioning of components and the fluidity of the features we tweaked so that the design would relate to a lot of people and required no learning curve as navigating around the website was familiar.
@@ -291,16 +290,6 @@ If a user wishes to create a community they must navigate to the 'Explore' page 
   \label{fig:Create Community Modal Form.}
 \end{figure}
 
-\textbf{Create a Post}
-\newline
-If a user wishes to create a post they can click the button 'Write a Post' on the feed pages and another modal pop up form will appear prompting the user to fill out the required sections for a post. A post must consist of a heading so that users will get a brief insight to what the post is about on the feed pages. 
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.35]{img/createpost.PNG}
-  \label{fig:Create Post Modal.}
-\end{figure}
-
 We are storing each community inside of its own collection within our MongoDB database. Each community consists of its general information and a users array to store the members of the community.
 
 \begin{figure}[H]
@@ -330,12 +319,14 @@ The feeds are divided into two sections, the default section is to display the p
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.30]{img/screen2.PNG}
+  \caption{Following Feed}
   \label{fig:Following Feed.}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.30]{img/screen1.PNG}
+  \caption{All Posts Feed}
   \label{fig:Top Posts Feed.}
 \end{figure}
 
@@ -402,7 +393,7 @@ To remove the a post from the discussion list they can go back to the post and c
 We wanted the website to feel unique to each user, this is why profiles are so important. When a user visits their own profile they will see a some option only they can see for example, deleting their posts and editing their profile. This is done through a check before the page loads in. When a user is logged in the id is saved to local storage, this id is then compared to that of the profile page you are on. An example of a profile page is shown below.
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.4]{img/Profile.PNG}
+  \includegraphics[scale=0.4]{img/user_profile.jpg}
   \label{fig:Profile}
 \end{figure}
 Each post contains the user id of the person who created it, this is done so we can then show them on the profile page.
@@ -412,6 +403,7 @@ The follow/unfollow was a feature we felt at the start we needed. All social med
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.4]{img/OtherProfile.PNG}
+  \caption{Another User's Profile Page}
   \label{fig:OtherProfile}
 \end{figure}
 
