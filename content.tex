@@ -146,7 +146,7 @@ Having a flexible schema provided us with the opportunity to swap and change nam
 Express is a back-end web application framework for Node.js. Instead of writing a full web server by hand on Node, developers use Express to greatly simplify the creation of a web server. There’s no need to continuously repeat the same code, as you would with the Node.js HTTP module.
 
 \section{Styling and Bootstrap}
-We have followed all of the community and industry standards in regards to styling and bootstrapping our application. Bootstrap is the most popular CSS framework which allows you to create responsive and mobile first websites.Bootstrap allows you to create nice website designs in a timely manner. Its responsive CSS allows developers to create front-end components which will resize themselves on many devices such as Mobile, Tablet, Laptop and Desktop. We have looked in detail to the correct colorways and decided to use 'Blue' as our main color scheme as psychologically it is considered as the worlds favourite color. Colors are an extremely important factor to a websites design especially if it is a social media platform where you want your users to be engaged with the material that they follow and read \cite{singh2011impact}. If the color scheme of the website does not match the website, the conversion rate will begin to decrease as people do not feel as engaged as they would on other platforms that understand the psychology of the user and what the user wants.
+We have followed all of the community and industry standards in regards to styling and bootstrapping our application. Bootstrap is the most popular CSS framework which allows you to create responsive and mobile first websites. Bootstrap allows you to create nice website designs in a timely manner. Its responsive CSS allows developers to create front-end components which will resize themselves on many devices such as Mobile, Tablet, Laptop and Desktop. We have looked in detail to the correct colorways and decided to use 'Blue' as our main color scheme as psychologically it is considered as the worlds favourite color. Colors are an extremely important factor to a websites design especially if it is a social media platform where you want your users to be engaged with the material that they follow and read \cite{singh2011impact}. If the color scheme of the website does not match the website, the conversion rate will begin to decrease as people do not feel as engaged as they would on other platforms that understand the psychology of the user and what the user wants.
 
 We used two external third party libraries to achieve specific front-end components within the application, these libraries were React Bootstrap and Material UI. Both of these third party libraries can be installed through the node package manager and are out of the box components that do not need cascading style-sheets or any editing. These libraries are extremely useful for a fast implementation of visual components although have many drawbacks as they cannot be styled. Majority of our application has been styled using our own internal cascading style-sheets where each component can have its own class name to determine its style. This way we could design the application to how we wanted it to look and achieve the most user friendly application.
 
@@ -170,8 +170,6 @@ GitHub is an extremely useful tool when working in a collaborative environment. 
 As GitHub is a breeding ground for open-source projects, there may need to be a Code of Conduct according to a research article in the ACM digital library, which states that "the rapid growth of open source software necessitates a deeper understanding of moderation and governance methods currently used within these projects."\cite{code_of_conduct}. This study conducted a qualitative analysis of a random sample of GitHub issues, and found that codes of conduct are utilized both proactively and reactively to control community behaviour. Though, too much moderation can result in mass community backlash. The control must be balanced, by discouraging potentially offensive speech, and encouraging inclusive participation.
 
 Although GitHub is a massively open-source website that contains millions of repositories that can facilitate code re-use, common misconceptions about the licensing of open-source software can cause problems. According to another research-article in the ACM digital library, where they compiled an extensive library of java projects from GitHub, out of 94 evaluated licenses in files and projects, they discovered that 29.6\% of them may have been involved in code-borrowing, and 9.4\% of them could potentially violate original licenses\cite{code_borrowing}.
-
-\section{Heroku}
 
 \section{Stack Comparison: MEAN vs MERN}
 \label{Section:Stack Comparison: MEAN vs MERN}
@@ -280,6 +278,7 @@ When a user has navigated to their account they will be able to edit their profi
   \label{fig:Edit Profile Screen.}
 \end{figure}
 
+\newpage
 \textbf{Create a Community}
 \newline
 If a user wishes to create a community they must navigate to the 'Explore' page for communities and press 'Create Community'. This action will then lead to a modal pop up which will be a form that the user must fill out to create the community. The form is simple and consists of a community Name, Description, Profile Picture.
@@ -305,7 +304,7 @@ If a user wishes to create a post they can click the button 'Write a Post' on th
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.35]{img/createpost.PNG}
+  \includegraphics[scale=0.35]{img/writepost.PNG}
   \label{fig:Create Post Modal.}
 \end{figure}
 
@@ -318,14 +317,14 @@ The feeds are divided into two sections, the default section is to display the p
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.30]{img/screen2.PNG}
+  \includegraphics[scale=0.30]{img/following.PNG}
   \caption{Following Feed}
   \label{fig:Following Feed.}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.30]{img/screen1.PNG}
+  \includegraphics[scale=0.30]{img/top.PNG}
   \caption{All Posts Feed}
   \label{fig:Top Posts Feed.}
 \end{figure}
@@ -346,7 +345,7 @@ Another example of lists which we have implemented into our application is displ
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.25]{img/users.png}
+  \includegraphics[scale=0.25]{img/users.PNG}
   \label{fig:Search Users within the website.}
 \end{figure}
 
@@ -384,7 +383,7 @@ It was important to have the function of clearing the notifications for efficien
 This was a feature we thought early on would be a feature to complement the website. When a user goes to a discussion they can click a button to add to their reading list. In doing so they have the opportunity to view this post at a later time.The the user adds a discussion to their reading list it's only saving the id of the discussion so it works at an optimal speed. When we are retrieving the data we can use the id to search for the discussion. The number displayed is simply counting the size of the array. A view of the reading list can be seen below.
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.55]{img/ReadingList.PNG}
+  \includegraphics[scale=0.55]{img/saved.PNG}
   \label{fig:Readinglist}
 \end{figure}
 To remove the a post from the discussion list they can go back to the post and click on the button again to remove it. Once they have removed it from the list a message will appear confirming you have removed it.
@@ -402,7 +401,7 @@ If you view another user's profile you will get the option to follow them or vie
 The follow/unfollow was a feature we felt at the start we needed. All social media platforms have some type of follow/unfollow whether it be adding a friend or making a connection. In our website this works when a user clicks the follow button, that user's id will be saved to your following list and your id will be saved to their followers list. When you view a person page you follow, a check will be done to see if you follow them or not. If you do follow them the button shown will be unfollow and vice verse for someone you do not follow. An example of this is shown below.
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.4]{img/OtherProfile.PNG}
+  \includegraphics[scale=0.4]{img/userprofile.PNG}
   \caption{Another User's Profile Page}
   \label{fig:OtherProfile}
 \end{figure}
